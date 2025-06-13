@@ -50,43 +50,75 @@ body {
 
 /* Sección "¿Quién soy?" */
 .quien-soy {
-  padding: 60px 20px;
-  background-color: #f9f9f9;
+  padding: 80px 20px;
+  background-color: black; /* Mismo fondo que el resto del sitio */
+  color: white;
 }
 
 .contenido-quien-soy {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   max-width: 1200px;
   margin: 0 auto;
+  gap: 60px;
   flex-wrap: wrap;
-  gap: 40px;
+}
+
+.foto-quien-soy {
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .foto-quien-soy img {
-  max-width: 350px;
-  width: 100%;
+  max-width: 100%;
+  max-height: 500px;
+  width: auto;
   border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
 .texto-quien-soy {
-  flex: 1;
+  flex: 2;
   max-width: 700px;
 }
 
 .texto-quien-soy h2 {
   font-family: 'MigueleExtraBold', sans-serif;
-  font-size: 2.8em;
-  margin-bottom: 20px;
-  color: #222;
+  font-size: 3em;
+  margin-bottom: 25px;
+  color: white;
 }
 
 .texto-quien-soy p {
   font-family: "Times New Roman", serif;
-  font-size: 1.1em;
+  font-size: 1.2em;
   line-height: 1.8;
-  margin-bottom: 20px;
-  color: #333;
+  color: white;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .contenido-quien-soy {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .texto-quien-soy {
+    max-width: 100%;
+  }
+
+  .foto-quien-soy img {
+    max-height: 300px;
+    margin-bottom: 20px;
+  }
+
+  .texto-quien-soy h2 {
+    font-size: 2.2em;
+  }
+
+  .texto-quien-soy p {
+    font-size: 1.1em;
+  }
 }
