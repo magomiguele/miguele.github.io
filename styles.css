@@ -1,64 +1,43 @@
-/* Estilos generales */
 body {
   margin: 0;
-  padding: 0;
-  font-family: 'Times New Roman', Times, serif;
   background-color: black;
-  color: #222;
+  color: white;
+  font-family: 'Times New Roman', serif;
 }
 
-/* Contenedor principal */
-.container {
+.intro {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
-  padding: 20px;
+  padding: 40px;
   box-sizing: border-box;
 }
 
-/* Sección izquierda: logotipo + laureles */
-.left-side {
+.left, .right {
   flex: 1;
-  text-align: center;
-  padding-right: 40px;
-}
-
-.left-side img {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 20px;
-}
-
-/* Logotipo */
-.logo {
-  max-width: 250px;
-}
-
-/* Laureles */
-.laurels {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.laurels img {
-  max-width: 200px;
-}
-
-/* Sección derecha: foto grande */
-.right-side {
-  flex: 1;
-  display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.right-side img {
-  max-width: 90%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+.logo {
+  max-width: 70%;
+  margin-bottom: 30px;
+}
+
+.laureles {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.laurel {
+  max-width: 120px;
+}
+
+.foto {
+  max-height: 90vh;
+  max-width: 100%;
+  object-fit: contain;
 }
