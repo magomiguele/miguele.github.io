@@ -3,78 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Miguele - Mago</title>
-  <link rel="stylesheet" href="styles.css" />
-  <style>
-    @font-face {
-      font-family: 'TimesNewRomanExtraBold';
-      src: url('TimesNewRoman_ExtraBold.ttf') format('truetype');
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: black;
-      color: white;
-      font-family: 'Times New Roman', serif;
-    }
-
-    .hero {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 2rem;
-    }
-
-    .left {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-      gap: 2rem;
-    }
-
-    .right {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .logo {
-      max-width: 250px;
-    }
-
-    .laureles {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .laureles img {
-      max-width: 200px;
-    }
-
-    .foto {
-      width: 100%;
-      max-width: 500px;
-      height: auto;
-      border-radius: 10px;
-    }
-  </style>
+  <title>Miguelé</title>
+  <link rel="icon" type="image/x-icon" href="Logotipo_Miguel.ico" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preload" href="TimesNewRoman_ExtraBold.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
 </head>
 <body>
-  <section class="hero">
-    <div class="left">
-      <img src="Logotipo_Miguele.tif" alt="Logotipo Miguele" class="logo" />
+  <section class="inicio">
+    <div class="izquierda">
+      <img src="Logotipo_Miguele.tif" alt="Logotipo Miguele" class="logotipo" />
       <div class="laureles">
-        <img src="Premio_Nacional_Miguele.png" alt="Premio Nacional" />
-        <img src="Premio_Rioboo_Miguele.png" alt="Premio Rioboo" />
+        <img src="Premio_Nacional_Miguele.png" alt="Premio Nacional" class="laurel" />
+        <img src="Premio_Rioboo_Miguele.png" alt="Premio Rioboo" class="laurel" />
       </div>
     </div>
-    <div class="right">
+    <div class="derecha">
       <img src="Miguele_alta_calidad_foto_Pablo_Ibanez_255.jpg" alt="Miguele" class="foto" />
     </div>
   </section>
