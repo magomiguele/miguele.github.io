@@ -102,12 +102,12 @@ body {
 .section-contenido {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 3rem;
-  max-width: 1200px;
-  margin: 5rem auto;
-  padding: 0 2rem;
   flex-wrap: wrap;
+  margin: 4rem auto;
+  max-width: 1200px;
+  padding: 0 2rem;
 }
 
 .section-contenido.reverse {
@@ -116,9 +116,9 @@ body {
 
 .section-contenido .texto {
   flex: 1 1 500px;
+  font-family: 'Times New Roman', serif;
   font-size: 1.2rem;
   line-height: 1.6;
-  font-family: "Times New Roman", serif;
 }
 
 .section-contenido .imagen {
