@@ -47,3 +47,25 @@ body {
   src: url('tipografia_extra_bold.ttf') format('truetype'); /* Asegúrate de que el archivo .ttf esté subido al repositorio */
   font-weight: 800;
 }
+
+.contenido-quien-soy {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  gap: 3rem;
+}
+
+.foto-quien-soy img {
+  max-height: 90vh;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.texto-quien-soy {
+  max-width: 700px;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
