@@ -98,3 +98,37 @@ body {
   object-fit: contain;
   border-radius: 10px;
 }
+
+.section-contenido {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 5rem auto;
+  padding: 0 2rem;
+  flex-wrap: wrap;
+}
+
+.section-contenido.reverse {
+  flex-direction: row-reverse;
+}
+
+.section-contenido .texto {
+  flex: 1 1 500px;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  font-family: "Times New Roman", serif;
+}
+
+.section-contenido .imagen {
+  flex: 1 1 400px;
+  max-width: 400px;
+}
+
+.section-contenido .imagen img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
