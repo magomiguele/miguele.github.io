@@ -201,3 +201,55 @@ body {
 .formulario-contacto button:hover {
   background-color: #ccc;
 }
+/* --- RESPONSIVE GENERAL --- */
+@media (max-width: 768px) {
+  /* Secciones principales en columna */
+  .hero,
+  .contenido-quien-soy,
+  .contenido-cita-a-ciegas {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* Asegurar que las fotos no se salen */
+  .foto,
+  .foto-quien-soy img,
+  .foto-cita-a-ciegas img {
+    max-width: 90%;
+    height: auto;
+    margin: 1rem auto;
+  }
+
+  /* Texto con margen para que no quede pegado */
+  .texto-quien-soy,
+  .texto-cita-a-ciegas {
+    padding: 0 1rem;
+  }
+
+  /* Logo y laureles más pequeños en móvil */
+  .logo {
+    max-width: 180px;
+    margin: 0 auto;
+  }
+
+  .laureles {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .laureles img {
+    max-width: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Reducir fuentes en pantallas muy pequeñas */
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+}
