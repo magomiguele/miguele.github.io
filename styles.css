@@ -269,3 +269,42 @@ body {
     text-align: center;
   }
 }
+@media (max-width: 768px) {
+  /* Secciones principales centradas */
+  .hero,
+  .contenido-quien-soy,
+  .contenido-cita-a-ciegas,
+  .contenedor-contacto {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Logo y laureles centrados */
+  .left {
+    align-items: center;
+    text-align: center;
+  }
+  .laureles {
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Textos centrados */
+  .texto-quien-soy,
+  .texto-cita-a-ciegas {
+    text-align: center;
+    align-items: center;
+  }
+
+  /* Formularios centrados */
+  .formulario-contacto form {
+    align-items: center;
+  }
+  .formulario-contacto input,
+  .formulario-contacto textarea,
+  .formulario-contacto button {
+    width: 100%;
+    max-width: 400px; /* para que no se estiren demasiado */
+  }
+}
