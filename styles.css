@@ -261,3 +261,11 @@ body {
     line-height: 1.5;
   }
 }
+@media (max-width: 768px) {
+  .contenido-quien-soy {
+    display: flex;
+    flex-direction: column-reverse; /* invierte el orden en móvil */
+    align-items: center;
+    text-align: center;
+  }
+}
