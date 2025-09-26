@@ -308,3 +308,24 @@ body {
     max-width: 400px; /* para que no se estiren demasiado */
   }
 }
+@media (max-width: 768px) {
+  /* Limitar ancho y centrar bloques de texto */
+  .texto-quien-soy,
+  .texto-cita-a-ciegas,
+  .contenedor-contacto {
+    max-width: 90%;     /* el bloque no ocupa todo el ancho */
+    margin: 0 auto;     /* lo centra horizontalmente */
+    text-align: center; /* centra el texto dentro del bloque */
+  }
+
+  /* Imágenes centradas y con tamaño adaptado */
+  .foto-quien-soy img,
+  .foto-cita-a-ciegas img,
+  .logo,
+  .laureles img {
+    display: block;
+    margin: 0 auto;
+    max-width: 90%;
+    height: auto;
+  }
+}
