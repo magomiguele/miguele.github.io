@@ -335,3 +335,17 @@ body {
     flex-direction: column; /* mantiene el orden natural del HTML */
   }
 }
+@media (max-width: 768px) {
+  .contenido-quien-soy {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .texto-quien-soy {
+    order: 1; /* primero */
+  }
+
+  .foto-quien-soy {
+    order: 2; /* después */
+  }
+}
