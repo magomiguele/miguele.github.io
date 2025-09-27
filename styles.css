@@ -349,3 +349,38 @@ body {
     order: 2; /* después */
   }
 }
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: black;
+  z-index: 1000;
+  padding: 1rem 0;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-family: 'TimesNewRomanExtraBold', 'Times New Roman', serif;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: gray;
+}
+
+/* Para que el contenido no quede oculto debajo del menú */
+body {
+  padding-top: 70px;
+}
