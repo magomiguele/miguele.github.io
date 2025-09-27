@@ -477,3 +477,7 @@ section {
     font-size: 1em; /* letras un poco más pequeñas */
   }
 }
+.navbar a {
+  font-family: 'TimesNewRomanExtraBold', 'Times New Roman', serif;
+  text-transform: uppercase; /* opcional: para que todo salga en mayúsculas */
+}
