@@ -421,3 +421,39 @@ body {
 section {
   scroll-margin-top: 80px;
 }
+/* Barra de navegación superior en negro ocupando todo el ancho */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: black;
+  padding: 15px 0;
+  z-index: 1000;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* centra horizontalmente los enlaces */
+  gap: 40px; /* espacio entre enlaces */
+}
+
+.navbar a {
+  font-family: 'TimesNewRomanExtraBold', serif; /* tu tipografía extrabold */
+  font-size: 1.3em;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: gray; /* cambia a gris al pasar el ratón */
+}
+
+/* Para que no quede tapado el contenido al hacer clic en el menú */
+section {
+  scroll-margin-top: 100px;
+}
