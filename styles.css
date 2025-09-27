@@ -457,3 +457,13 @@ section {
 section {
   scroll-margin-top: 100px;
 }
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+  .navbar ul {
+    gap: 20px; /* menos espacio entre enlaces */
+  }
+
+  .navbar a {
+    font-size: 1em; /* letras un poco más pequeñas */
+  }
+}
