@@ -7,7 +7,7 @@ body {
 
 .intro {
   display: flex;
-  height: 100vh;
+  min-height: 100vh; /* se adapta mejor que height */
   padding: 40px;
   box-sizing: border-box;
 }
