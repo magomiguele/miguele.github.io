@@ -481,3 +481,7 @@ section {
   font-family: 'TimesNewRomanExtraBold', 'Times New Roman', serif;
   text-transform: uppercase; /* opcional: para que todo salga en mayúsculas */
 }
+section {
+  padding: 80px 20px; /* margen interno arriba/abajo e izquierda/derecha */
+  box-sizing: border-box;
+}
