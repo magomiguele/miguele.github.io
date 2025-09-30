@@ -485,3 +485,10 @@ section {
   padding: 80px 20px; /* margen interno arriba/abajo e izquierda/derecha */
   box-sizing: border-box;
 }
+h2 {
+  margin-bottom: 30px; /* espacio entre título y texto */
+}
+p {
+  margin-bottom: 20px; /* espacio entre párrafos */
+  line-height: 1.7;    /* más separación entre líneas para que respire */
+}
