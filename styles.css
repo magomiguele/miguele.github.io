@@ -10,42 +10,49 @@ body {
 }
 
 @font-face {
-  font-family: "MigueleExtraBold";
-  src: url("tipografia_extra_bold.ttf") format("truetype");
+  font-family: "TimesNewRomanExtraBold";
+  src: url("TimesNewRoman_ExtraBold.ttf") format("truetype");
   font-weight: 800;
 }
 
 /* ---------------------------
    Menú de navegación
 --------------------------- */
-nav {
+.navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: black;
-  display: flex;
-  justify-content: center;
-  padding: 0.8rem;
+  background-color: black;
+  padding: 15px 0;
   z-index: 1000;
 }
 
-nav a {
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.navbar a {
+  font-family: "TimesNewRomanExtraBold", serif;
+  font-size: 1.3em;
   color: white;
-  margin: 0 1.2rem;
   text-decoration: none;
-  font-family: "MigueleExtraBold", sans-serif;
-  font-size: 1.1em;
   transition: color 0.3s;
 }
 
-nav a:hover {
+.navbar a:hover {
   color: gray;
 }
 
 section {
-  scroll-margin-top: 90px; /* para que el menú no tape títulos */
+  scroll-margin-top: 100px;
   padding: 3rem 2rem;
+  box-sizing: border-box;
 }
 
 /* ---------------------------
@@ -55,7 +62,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 90vh;
+  height: 85vh;
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
@@ -92,7 +99,7 @@ section {
 }
 
 .foto {
-  max-width: 350px;
+  max-width: 340px;
   width: 100%;
   border-radius: 8px;
   object-fit: cover;
@@ -100,18 +107,19 @@ section {
 }
 
 /* ---------------------------
-   Secciones generales
+   Tipografía y textos
 --------------------------- */
 h2 {
-  font-family: "MigueleExtraBold", sans-serif;
-  font-size: 2.2em;
+  font-family: "TimesNewRomanExtraBold", serif;
+  font-size: 2rem;
   margin-bottom: 1rem;
   text-align: center;
 }
 
 p {
-  font-size: 1.1em;
+  font-size: 1.05em; /* ligeramente más pequeño */
   margin-bottom: 1rem;
+  line-height: 1.65;
 }
 
 /* ---------------------------
@@ -144,7 +152,7 @@ p {
   width: 100%;
   border-radius: 8px;
   object-fit: cover;
-  margin: 0; /* elimina espacio sobrante */
+  margin: 0;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
@@ -164,8 +172,12 @@ p {
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
 }
 
+.formulario-contacto h2 {
+  font-family: "TimesNewRomanExtraBold", serif;
+}
+
 .formulario-contacto label {
-  font-family: "MigueleExtraBold", sans-serif;
+  font-family: "TimesNewRomanExtraBold", serif;
   display: block;
   margin-bottom: 0.5rem;
 }
@@ -184,7 +196,7 @@ p {
 
 .formulario-contacto button {
   padding: 0.8rem;
-  font-family: "MigueleExtraBold", sans-serif;
+  font-family: "TimesNewRomanExtraBold", serif;
   background: white;
   color: black;
   border: none;
@@ -215,20 +227,18 @@ p {
   }
 
   .contenido-quien-soy {
-    flex-direction: column-reverse; /* foto debajo en móvil */
+    flex-direction: column-reverse;
   }
 
   .contenido-cita-a-ciegas {
     flex-direction: column-reverse;
   }
 
-  nav {
-    flex-wrap: wrap;
-    padding: 0.5rem;
+  .navbar ul {
+    gap: 20px;
   }
 
-  nav a {
-    margin: 0.5rem;
+  .navbar a {
     font-size: 1em;
   }
 }
