@@ -248,11 +248,17 @@ p {
   justify-content: center;
   gap: 40px;
 }
+.redes-contacto {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
 
 .red-social {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   font-family: "TimesNewRomanExtraBold", serif;
   font-size: 1.2em;
   color: white;
@@ -261,8 +267,8 @@ p {
 }
 
 .red-social img {
-  width: 24px;
-  height: 24px;
+  height: 1em;  /* icono del mismo tamaño que el texto */
+  width: auto;
 }
 
 .red-social:hover {
