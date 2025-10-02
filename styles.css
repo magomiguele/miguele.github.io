@@ -6,172 +6,13 @@ body {
   background-color: black;
   color: white;
   font-family: "Times New Roman", serif;
+  line-height: 1.6;
 }
 
-/* Tipografía extra bold personalizada */
 @font-face {
   font-family: "MigueleExtraBold";
   src: url("tipografia_extra_bold.ttf") format("truetype");
   font-weight: 800;
-}
-
-/* ---------------------------
-   Hero (Inicio)
---------------------------- */
-.hero {
-  display: flex;
-  height: 100vh;
-  padding: 40px;
-  box-sizing: border-box;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-}
-
-.hero .left {
-  flex: 1.2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.hero .right {
-  flex: 0.8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.logo {
-  max-width: 60%;
-}
-
-.laureles {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.laurel {
-  max-width: 120px;
-}
-
-.foto {
-  max-width: 400px;
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
-  object-fit: cover;
-}
-
-/* ---------------------------
-   Secciones generales
---------------------------- */
-section {
-  padding: 4rem 2rem;
-}
-
-h2 {
-  font-family: "MigueleExtraBold", sans-serif;
-  font-size: 2.5em;
-  margin-bottom: 1.5rem;
-  color: white;
-}
-
-/* ---------------------------
-   ¿Quién soy? y Cita a ciegas
---------------------------- */
-.contenido-quien-soy,
-.contenido-cita-a-ciegas {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  gap: 2rem;
-}
-
-.texto-quien-soy,
-.texto-cita-a-ciegas {
-  flex: 2;
-  max-width: 700px;
-}
-
-.texto-quien-soy p,
-.texto-cita-a-ciegas p {
-  font-family: "Times New Roman", serif;
-  font-size: 1.1em;
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
-  max-width: 650px;
-  color: white;
-}
-
-.foto-quien-soy,
-.foto-cita-a-ciegas {
-  flex: 1;
-  max-width: 350px;
-}
-
-.foto-quien-soy img,
-.foto-cita-a-ciegas img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-  object-fit: cover;
-}
-
-/* ---------------------------
-   Contacto
---------------------------- */
-.contacto {
-  text-align: center;
-}
-
-.contacto h2 {
-  color: white;
-}
-
-.contacto form {
-  max-width: 600px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-}
-
-.contacto label {
-  font-family: "MigueleExtraBold", sans-serif;
-  text-align: left;
-  color: white;
-}
-
-.contacto input,
-.contacto textarea {
-  width: 100%;
-  padding: 0.8rem;
-  border-radius: 6px;
-  border: none;
-  font-family: "Times New Roman", serif;
-  font-size: 1em;
-}
-
-.contacto button {
-  padding: 0.8rem;
-  font-family: "MigueleExtraBold", sans-serif;
-  background: white;
-  color: black;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.contacto button:hover {
-  background: #ddd;
 }
 
 /* ---------------------------
@@ -185,20 +26,175 @@ nav {
   background: black;
   display: flex;
   justify-content: center;
-  padding: 1rem;
+  padding: 0.8rem;
   z-index: 1000;
 }
 
 nav a {
   color: white;
-  margin: 0 1rem;
+  margin: 0 1.2rem;
   text-decoration: none;
   font-family: "MigueleExtraBold", sans-serif;
   font-size: 1.1em;
+  transition: color 0.3s;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  color: gray;
+}
+
+section {
+  scroll-margin-top: 90px; /* para que el menú no tape títulos */
+  padding: 3rem 2rem;
+}
+
+/* ---------------------------
+   Hero (Inicio)
+--------------------------- */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 90vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.hero .left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  max-width: 65%;
+}
+
+.laureles {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.laurel {
+  max-width: 100px;
+}
+
+.hero .right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.foto {
+  max-width: 350px;
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* ---------------------------
+   Secciones generales
+--------------------------- */
+h2 {
+  font-family: "MigueleExtraBold", sans-serif;
+  font-size: 2.2em;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+p {
+  font-size: 1.1em;
+  margin-bottom: 1rem;
+}
+
+/* ---------------------------
+   ¿Quién soy? / Cita a ciegas
+--------------------------- */
+.contenido-quien-soy,
+.contenido-cita-a-ciegas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.texto-quien-soy,
+.texto-cita-a-ciegas {
+  flex: 2;
+  max-width: 650px;
+}
+
+.foto-quien-soy,
+.foto-cita-a-ciegas {
+  flex: 1;
+  max-width: 320px;
+}
+
+.foto-quien-soy img,
+.foto-cita-a-ciegas img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  margin: 0; /* elimina espacio sobrante */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* ---------------------------
+   Contacto
+--------------------------- */
+.contacto {
+  text-align: center;
+}
+
+.formulario-contacto {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #111;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.formulario-contacto label {
+  font-family: "MigueleExtraBold", sans-serif;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  background: #222;
+  color: white;
+  font-family: "Times New Roman", serif;
+}
+
+.formulario-contacto button {
+  padding: 0.8rem;
+  font-family: "MigueleExtraBold", sans-serif;
+  background: white;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.formulario-contacto button:hover {
+  background: #ddd;
 }
 
 /* ---------------------------
@@ -207,27 +203,23 @@ nav a:hover {
 @media (max-width: 768px) {
   .hero {
     flex-direction: column;
-    text-align: center;
     height: auto;
+    text-align: center;
   }
 
   .contenido-quien-soy,
   .contenido-cita-a-ciegas {
     flex-direction: column;
     text-align: center;
+    gap: 1.5rem;
   }
 
   .contenido-quien-soy {
-    flex-direction: column-reverse; /* foto debajo del texto */
+    flex-direction: column-reverse; /* foto debajo en móvil */
   }
 
   .contenido-cita-a-ciegas {
-    flex-direction: column-reverse; /* foto debajo del texto */
-  }
-
-  .texto-quien-soy,
-  .texto-cita-a-ciegas {
-    max-width: 100%;
+    flex-direction: column-reverse;
   }
 
   nav {
