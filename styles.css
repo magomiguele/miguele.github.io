@@ -242,3 +242,29 @@ p {
     font-size: 1em;
   }
 }
+.redes-contacto {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.red-social {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "TimesNewRomanExtraBold", serif;
+  font-size: 1.2em;
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.red-social img {
+  width: 24px;
+  height: 24px;
+}
+
+.red-social:hover {
+  opacity: 0.7;
+}
