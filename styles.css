@@ -164,15 +164,15 @@ p {
 }
 
 .formulario-contacto {
-  background-color: black; /* mismo color que el fondo de la web */
+  background-color: black; /* mismo fondo que la web */
   padding: 2rem 3rem;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(255, 0, 0, 0.3); /* sombra ligera roja para destacar */
+  border-radius: 0; /* sin esquinas redondeadas */
+  box-shadow: none; /* sin sombra */
   max-width: 600px;
   width: 100%;
   color: white;
   font-family: 'Times New Roman', serif;
-  border: 2px solid red; /* marco sutil en rojo */
+  border: none; /* elimina cualquier borde */
 }
 
 .formulario-contacto h2 {
@@ -197,11 +197,11 @@ p {
 .formulario-contacto input,
 .formulario-contacto textarea {
   padding: 1rem;
-  border: 1px solid #444;
+  border: 1px solid white; /* borde blanco fino */
   border-radius: 5px;
   font-size: 1rem;
-  font-family: inherit;
-  background-color: #111;
+  font-family: 'Times New Roman', serif;
+  background-color: black; /* cajas negras */
   color: white;
 }
 
@@ -218,7 +218,7 @@ p {
   border-radius: 5px;
   background-color: red;   /* rojo vivo */
   color: white;            /* letras blancas */
-  font-weight: bold;
+  font-family: 'TimesNewRomanExtraBold', serif; /* tipografía extrabold */
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
