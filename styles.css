@@ -525,3 +525,50 @@ p {
     height: 1.5rem;
   }
 }
+/* --- Redes de contacto (ajuste más grande y compacto) --- */
+.contact-info {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-evenly; /* reparte más equilibrado que space-between */
+  align-items: center;
+  width: 100%;
+  max-width: 600px; /* mismo ancho que el botón */
+  margin-left: auto;
+  margin-right: auto;
+  gap: 10px; /* menos hueco entre ellos */
+}
+
+.contact-info a {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem; /* icono más pegado al texto */
+  text-decoration: none;
+  color: white;
+  font-family: "TimesNewRomanExtraBold", serif;
+  font-size: 1.9rem; /* más grande */
+}
+
+.contact-info img {
+  height: 1.9rem; /* mismo tamaño que letras */
+  width: auto;
+  vertical-align: middle;
+}
+
+/* --- Versión móvil --- */
+@media (max-width: 768px) {
+  .contact-info {
+    flex-direction: column;
+    gap: 1.4rem;
+    max-width: 400px;
+  }
+
+  .contact-info a {
+    font-size: 1.7rem;
+  }
+
+  .contact-info img {
+    height: 1.7rem;
+  }
+}
