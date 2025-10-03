@@ -319,30 +319,30 @@ p {
 
 /* --- Enlaces de redes y contacto --- */
 .contact-info {
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin-top: 2rem;
-  width: 100%;              /* que ocupe el mismo ancho que el botón */
-  max-width: 400px;         /* no demasiado ancho */
+  width: 100%;
+  max-width: 400px; /* mismo ancho que el botón */
   margin-left: auto;
-  margin-right: auto;       /* centrado */
+  margin-right: auto;
 }
 
 .contact-info a {
   display: flex;
-  align-items: center;       /* icono y texto alineados */
-  justify-content: center;   /* centrado en el ancho */
-  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
   text-decoration: none;
-  font-family: 'TimesNewRomanExtraBold', serif;
-  font-size: 1.3rem;         /* tamaño más grande */
   color: white;
-  background-color: transparent;
+  font-family: 'TimesNewRomanExtraBold', 'Times New Roman', serif;
+  font-size: 1.3rem;
+  width: 100%;
 }
 
-.contact-info a img {
-  height: 1.3rem; /* igual a la altura del texto */
+.contact-info img {
+  height: 1.3rem; /* mismo tamaño que el texto */
   width: auto;
   display: inline-block;
 }
