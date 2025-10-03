@@ -244,14 +244,6 @@ p {
     gap: 1.5rem;
   }
 
-  .contenido-quien-soy {
-    flex-direction: column-reverse;
-  }
-
-  .contenido-cita-a-ciegas {
-    flex-direction: column-reverse;
-  }
-
   .navbar ul {
     gap: 20px;
   }
@@ -295,12 +287,12 @@ p {
 /* --- Sección de contacto centrada --- */
 .contacto {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  flex-direction: column; /* para que todo quede en columna */
-  min-height: 100vh;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
   padding: 4rem 2rem;
-  background-color: #000;
 }
 
 /* --- Formulario --- */
@@ -329,16 +321,14 @@ p {
   margin-right: auto;
 }
 
-.contact-info a {
+.contacto {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.8rem;
-  text-decoration: none;
-  color: white;
-  font-family: 'TimesNewRomanExtraBold', 'Times New Roman', serif;
-  font-size: 1.3rem;
-  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 4rem 2rem;
 }
 
 .contact-info img {
@@ -383,15 +373,15 @@ p {
   }
 
   /* TELÉFONO E INSTAGRAM en móvil */
-  .contact-info {
-    display: flex;
-    flex-direction: column; /* cada uno en su línea */
-    gap: 1.2rem;
-    width: 100%;
-    max-width: 400px; /* mismo ancho que el botón */
-    margin: 2rem auto 0 auto;
-    text-align: center;
-  }
+  .contacto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
 
   .contact-info a {
     justify-content: center;
@@ -405,26 +395,24 @@ p {
   }
 }
 /* --- Redes sociales en escritorio: 1 sola línea ocupando ancho del botón --- */
-.contact-info {
+.contacto {
   display: flex;
-  justify-content: space-between; /* que se estiren en todo el ancho */
-  align-items: center;
-  gap: 2rem;
-  width: 100%;
-  max-width: 400px; /* mismo ancho que el botón */
-  margin: 2rem auto 0 auto;
-}
-
-.contact-info a {
-  flex: 1; /* cada enlace ocupa mitad del ancho */
-  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.6rem;
-  text-decoration: none;
-  color: white;
-  font-family: 'TimesNewRomanExtraBold', serif;
-  font-size: 1.4rem;
+  text-align: center;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.contacto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  padding: 4rem 2rem;
 }
 
 .contact-info img {
@@ -452,27 +440,24 @@ p {
     width: auto;
   }
 }
-.contact-info {
+.contacto {
   display: flex;
-  flex-direction: row; /* en fila */
-  justify-content: space-between; /* que ocupen todo el ancho */
-  align-items: center;
-  gap: 2rem;
-  width: 100%;
-  max-width: 600px; /* el mismo ancho que el formulario */
-  margin: 2rem auto 0 auto;
-}
-
-.contact-info a {
-  flex: 1; /* cada enlace ocupa el mismo espacio */
-  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.6rem;
-  font-size: 1.2rem;
-  text-decoration: none;
-  color: white;
-  font-family: "TimesNewRomanExtraBold", serif;
+  text-align: center;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.contacto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  padding: 4rem 2rem;
 }
 
 .contact-info img {
@@ -491,16 +476,14 @@ p {
   margin-right: auto;
 }
 
-.contact-info a {
-  flex: 1; /* cada enlace ocupa la mitad del ancho */
+.contacto {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.8rem;
-  text-decoration: none;
-  color: white;
-  font-family: "TimesNewRomanExtraBold", serif;
-  font-size: 1.6rem; /* más grande (ajusta si hace falta) */
+  text-align: center;
+  margin: 0 auto;
+  padding: 4rem 2rem;
 }
 
 .contact-info img {
@@ -511,11 +494,15 @@ p {
 
 /* --- Versión móvil --- */
 @media (max-width: 768px) {
-  .contact-info {
-    flex-direction: column; /* en dos líneas */
-    gap: 1.2rem;
-    max-width: 400px; /* ancho adaptado al botón */
-  }
+  .contacto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
 
   .contact-info a {
     font-size: 1.5rem;
@@ -538,16 +525,14 @@ p {
   gap: 10px; /* menos hueco entre ellos */
 }
 
-.contact-info a {
-  flex: 1;
+.contacto {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.6rem; /* icono más pegado al texto */
-  text-decoration: none;
-  color: white;
-  font-family: "TimesNewRomanExtraBold", serif;
-  font-size: 1.9rem; /* más grande */
+  text-align: center;
+  margin: 0 auto;
+  padding: 4rem 2rem;
 }
 
 .contact-info img {
@@ -558,11 +543,15 @@ p {
 
 /* --- Versión móvil --- */
 @media (max-width: 768px) {
-  .contact-info {
-    flex-direction: column;
-    gap: 1.4rem;
-    max-width: 400px;
-  }
+  .contacto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
 
   .contact-info a {
     font-size: 1.7rem;
@@ -628,29 +617,29 @@ p {
 
   /* Contacto bien centrado */
   .contacto {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center !important;
-    margin: 0 auto;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
 
   .formulario-contacto {
     margin: 0 auto !important;
     text-align: center;
   }
 
-  .contact-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.2rem;
-    width: 100%;
-    max-width: 400px;
-    margin: 2rem auto 0 auto;
-    text-align: center;
-  }
+  .contacto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
 
   .contact-info a {
     justify-content: center;
