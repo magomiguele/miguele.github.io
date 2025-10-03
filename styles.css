@@ -572,3 +572,15 @@ p {
     height: 1.7rem;
   }
 }
+/* Ajuste fino de iconos para alineación perfecta */
+.contact-info img {
+  height: 1.9rem; 
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Corrección específica para el icono de Instagram */
+.contact-info img[alt="Instagram"] {
+  transform: translateY(2px); /* lo baja un poquito */
+}
