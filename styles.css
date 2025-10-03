@@ -479,3 +479,49 @@ p {
   height: 1.2rem; /* mismo alto que el texto */
   width: auto;
 }
+/* --- Redes de contacto (ajuste final) --- */
+.contact-info {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 600px; /* mismo ancho que el formulario y botón */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-info a {
+  flex: 1; /* cada enlace ocupa la mitad del ancho */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  text-decoration: none;
+  color: white;
+  font-family: "TimesNewRomanExtraBold", serif;
+  font-size: 1.6rem; /* más grande (ajusta si hace falta) */
+}
+
+.contact-info img {
+  height: 1.6rem; /* exactamente la misma altura que las letras */
+  width: auto;
+  vertical-align: middle; /* fuerza a alinearse al texto */
+}
+
+/* --- Versión móvil --- */
+@media (max-width: 768px) {
+  .contact-info {
+    flex-direction: column; /* en dos líneas */
+    gap: 1.2rem;
+    max-width: 400px; /* ancho adaptado al botón */
+  }
+
+  .contact-info a {
+    font-size: 1.5rem;
+  }
+
+  .contact-info img {
+    height: 1.5rem;
+  }
+}
