@@ -292,3 +292,57 @@ p {
 .red-social:hover {
   opacity: 0.7;
 }
+/* --- Sección de contacto centrada --- */
+.contacto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* para que todo quede en columna */
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  background-color: #000;
+}
+
+/* --- Formulario --- */
+.formulario-contacto {
+  background-color: black;
+  padding: 2rem 3rem;
+  max-width: 600px;
+  width: 100%;
+  color: white;
+  font-family: 'Times New Roman', serif;
+  border: none;
+  box-shadow: none;
+  margin: 0 auto; /* centrado */
+  text-align: center;
+}
+
+/* --- Enlaces de redes y contacto --- */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+  width: 100%;              /* que ocupe el mismo ancho que el botón */
+  max-width: 400px;         /* no demasiado ancho */
+  margin-left: auto;
+  margin-right: auto;       /* centrado */
+}
+
+.contact-info a {
+  display: flex;
+  align-items: center;       /* icono y texto alineados */
+  justify-content: center;   /* centrado en el ancho */
+  gap: 0.5rem;
+  text-decoration: none;
+  font-family: 'TimesNewRomanExtraBold', serif;
+  font-size: 1.3rem;         /* tamaño más grande */
+  color: white;
+  background-color: transparent;
+}
+
+.contact-info a img {
+  height: 1.3rem; /* igual a la altura del texto */
+  width: auto;
+  display: inline-block;
+}
