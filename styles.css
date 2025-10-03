@@ -584,3 +584,45 @@ p {
 .contact-info img[alt="Instagram"] {
   transform: translateY(2px); /* lo baja un poquito */
 }
+/* --- Ajustes móviles globales --- */
+@media (max-width: 768px) {
+  /* Centrar todo en móvil */
+  body, section, .hero, .navbar, .contacto {
+    text-align: center;
+  }
+
+  /* Quién soy y Cita a ciegas - estructura */
+  .contenido-quien-soy,
+  .contenido-cita-a-ciegas {
+    display: flex;
+    flex-direction: column; /* título, foto, texto */
+    align-items: center;    /* todo centrado */
+    gap: 1rem;
+  }
+
+  .texto-quien-soy h2,
+  .texto-cita-a-ciegas h2 {
+    order: 1; /* Título primero */
+    font-family: "TimesNewRomanExtraBold", serif;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .foto-quien-soy,
+  .foto-cita-a-ciegas {
+    order: 2; /* Foto en medio */
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .texto-quien-soy p,
+  .texto-cita-a-ciegas p {
+    order: 3; /* Texto al final */
+    font-family: "Times New Roman", serif;
+    text-align: left;   /* alineado a la izquierda */
+    margin: 0 auto;
+    max-width: 90%;     /* que no quede pegado a los lados */
+  }
+}
