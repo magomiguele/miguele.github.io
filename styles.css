@@ -404,3 +404,51 @@ p {
     width: auto;
   }
 }
+/* --- Redes sociales en escritorio: 1 sola línea ocupando ancho del botón --- */
+.contact-info {
+  display: flex;
+  justify-content: space-between; /* que se estiren en todo el ancho */
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 400px; /* mismo ancho que el botón */
+  margin: 2rem auto 0 auto;
+}
+
+.contact-info a {
+  flex: 1; /* cada enlace ocupa mitad del ancho */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: white;
+  font-family: 'TimesNewRomanExtraBold', serif;
+  font-size: 1.4rem;
+}
+
+.contact-info img {
+  height: 1.4rem; /* igual de alto que la fuente */
+  width: auto;
+  display: inline-block;
+}
+
+/* --- Ajustes específicos para móviles --- */
+@media (max-width: 768px) {
+  .contact-info {
+    flex-direction: column;   /* en columna */
+    gap: 1rem;
+    max-width: 400px;         /* mismo ancho que botón */
+  }
+
+  .contact-info a {
+    font-size: 1.5rem;  /* más grande en móvil */
+    width: 100%;        /* que ocupen todo el ancho */
+    justify-content: center;
+  }
+
+  .contact-info img {
+    height: 1.5rem; /* igual que las letras */
+    width: auto;
+  }
+}
