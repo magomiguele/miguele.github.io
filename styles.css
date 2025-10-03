@@ -15,6 +15,12 @@ body {
   font-weight: 800;
 }
 
+section {
+  scroll-margin-top: 100px;
+  padding: 3rem 2rem;
+  box-sizing: border-box;
+}
+
 /* ---------------------------
    Menú de navegación
 --------------------------- */
@@ -47,12 +53,6 @@ body {
 
 .navbar a:hover {
   color: gray;
-}
-
-section {
-  scroll-margin-top: 100px;
-  padding: 3rem 2rem;
-  box-sizing: border-box;
 }
 
 /* ---------------------------
@@ -117,7 +117,7 @@ h2 {
 }
 
 p {
-  font-size: 1.05em; /* ligeramente más pequeño */
+  font-size: 1.05em;
   margin-bottom: 1rem;
   line-height: 1.65;
 }
@@ -160,19 +160,27 @@ p {
    Contacto
 --------------------------- */
 .contacto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  background-color: #000;
   text-align: center;
 }
 
 .formulario-contacto {
-  background-color: black; /* mismo fondo que la web */
+  background-color: black;
   padding: 2rem 3rem;
-  border-radius: 0; /* sin esquinas redondeadas */
-  box-shadow: none; /* sin sombra */
+  border-radius: 0;
+  box-shadow: none;
   max-width: 600px;
   width: 100%;
   color: white;
   font-family: 'Times New Roman', serif;
-  border: none; /* elimina cualquier borde */
+  border: none;
+  margin: 0 auto;
 }
 
 .formulario-contacto h2 {
@@ -197,11 +205,11 @@ p {
 .formulario-contacto input,
 .formulario-contacto textarea {
   padding: 1rem;
-  border: 1px solid white; /* borde blanco fino */
+  border: 1px solid white;
   border-radius: 5px;
   font-size: 1rem;
   font-family: 'Times New Roman', serif;
-  background-color: black; /* cajas negras */
+  background-color: black;
   color: white;
 }
 
@@ -216,40 +224,63 @@ p {
   font-size: 1rem;
   border: none;
   border-radius: 5px;
-  background-color: red;   /* rojo vivo */
-  color: white;            /* letras blancas */
-  font-family: 'TimesNewRomanExtraBold', serif; /* tipografía extrabold */
+  background-color: red;
+  color: white;
+  font-family: 'TimesNewRomanExtraBold', serif;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .formulario-contacto button:hover {
-  background-color: darkred; /* rojo más oscuro al pasar el ratón */
+  background-color: darkred;
+}
+
+/* --- Redes de contacto (ESCRITORIO) --- */
+.contact-info {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 10px;
+}
+
+.contact-info a {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: white;
+  font-family: "TimesNewRomanExtraBold", serif;
+  font-size: 1.9rem;
+}
+
+.contact-info img {
+  height: 1.9rem;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Ajuste fino del icono de Instagram */
+.contact-info img[alt="Instagram"] {
+  transform: translateY(2px);
 }
 
 /* ---------------------------
-   Responsive
+   Responsive (Móvil)
 --------------------------- */
 @media (max-width: 768px) {
+  /* HERO */
   .hero {
     flex-direction: column;
     height: auto;
     text-align: center;
-  }
-
-  .contenido-quien-soy,
-  .contenido-cita-a-ciegas {
-    flex-direction: column;
-    text-align: center;
-    gap: 1.5rem;
-  }
-
-  .contenido-quien-soy {
-    flex-direction: column-reverse;
-  }
-
-  .contenido-cita-a-ciegas {
-    flex-direction: column-reverse;
   }
 
   .navbar ul {
@@ -259,408 +290,16 @@ p {
   .navbar a {
     font-size: 1em;
   }
-}
-.redes-contacto {
-  margin-top: 2rem;
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-}
-.redes-contacto {
-  margin-top: 2rem;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-}
 
-.red-social {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: "TimesNewRomanExtraBold", serif;
-  font-size: 1.2em;
-  color: white;
-  text-decoration: none;
-  transition: opacity 0.3s;
-}
-
-.red-social img {
-  height: 1em;  /* icono del mismo tamaño que el texto */
-  width: auto;
-}
-
-.red-social:hover {
-  opacity: 0.7;
-}
-/* --- Sección de contacto centrada --- */
-.contacto {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column; /* para que todo quede en columna */
-  min-height: 100vh;
-  padding: 4rem 2rem;
-  background-color: #000;
-}
-
-/* --- Formulario --- */
-.formulario-contacto {
-  background-color: black;
-  padding: 2rem 3rem;
-  max-width: 600px;
-  width: 100%;
-  color: white;
-  font-family: 'Times New Roman', serif;
-  border: none;
-  box-shadow: none;
-  margin: 0 auto; /* centrado */
-  text-align: center;
-}
-
-/* --- Enlaces de redes y contacto --- */
-.contact-info {
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  width: 100%;
-  max-width: 400px; /* mismo ancho que el botón */
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.contact-info a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.8rem;
-  text-decoration: none;
-  color: white;
-  font-family: 'TimesNewRomanExtraBold', 'Times New Roman', serif;
-  font-size: 1.3rem;
-  width: 100%;
-}
-
-.contact-info img {
-  height: 1.3rem; /* mismo tamaño que el texto */
-  width: auto;
-  display: inline-block;
-}
-/* --- Ajustes móviles globales --- */
-@media (max-width: 768px) {
-  /* SECCIONES QUIÉN SOY y CITA A CIEGAS */
-  .contenido-quien-soy,
-  .contenido-cita-a-ciegas {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    text-align: center;
-  }
-
-  .texto-quien-soy h2,
-  .texto-cita-a-ciegas h2 {
-    order: 1; /* título arriba */
-    margin-bottom: 1rem;
-  }
-
-  .foto-quien-soy,
-  .foto-cita-a-ciegas {
-    order: 2; /* foto en medio */
-    margin-bottom: 1rem;
-  }
-
-  .texto-quien-soy p,
-  .texto-cita-a-ciegas p {
-    order: 3; /* texto al final */
-    text-align: left;   /* alineado a la izquierda */
-  }
-
-  /* FORMULARIO CONTACTO */
-  .formulario-contacto {
-    margin: 0 auto; /* centrado */
-    text-align: center;
-  }
-
-  /* TELÉFONO E INSTAGRAM en móvil */
-  .contact-info {
-    display: flex;
-    flex-direction: column; /* cada uno en su línea */
-    gap: 1.2rem;
-    width: 100%;
-    max-width: 400px; /* mismo ancho que el botón */
-    margin: 2rem auto 0 auto;
-    text-align: center;
-  }
-
-  .contact-info a {
-    justify-content: center;
-    font-size: 1.5rem; /* más grande */
-    width: 100%;
-  }
-
-  .contact-info img {
-    height: 1.5rem; /* mismo alto que las letras */
-    width: auto;
-  }
-}
-/* --- Redes sociales en escritorio: 1 sola línea ocupando ancho del botón --- */
-.contact-info {
-  display: flex;
-  justify-content: space-between; /* que se estiren en todo el ancho */
-  align-items: center;
-  gap: 2rem;
-  width: 100%;
-  max-width: 400px; /* mismo ancho que el botón */
-  margin: 2rem auto 0 auto;
-}
-
-.contact-info a {
-  flex: 1; /* cada enlace ocupa mitad del ancho */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  text-decoration: none;
-  color: white;
-  font-family: 'TimesNewRomanExtraBold', serif;
-  font-size: 1.4rem;
-}
-
-.contact-info img {
-  height: 1.4rem; /* igual de alto que la fuente */
-  width: auto;
-  display: inline-block;
-}
-
-/* --- Ajustes específicos para móviles --- */
-@media (max-width: 768px) {
-  .contact-info {
-    flex-direction: column;   /* en columna */
-    gap: 1rem;
-    max-width: 400px;         /* mismo ancho que botón */
-  }
-
-  .contact-info a {
-    font-size: 1.5rem;  /* más grande en móvil */
-    width: 100%;        /* que ocupen todo el ancho */
-    justify-content: center;
-  }
-
-  .contact-info img {
-    height: 1.5rem; /* igual que las letras */
-    width: auto;
-  }
-}
-.contact-info {
-  display: flex;
-  flex-direction: row; /* en fila */
-  justify-content: space-between; /* que ocupen todo el ancho */
-  align-items: center;
-  gap: 2rem;
-  width: 100%;
-  max-width: 600px; /* el mismo ancho que el formulario */
-  margin: 2rem auto 0 auto;
-}
-
-.contact-info a {
-  flex: 1; /* cada enlace ocupa el mismo espacio */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  font-size: 1.2rem;
-  text-decoration: none;
-  color: white;
-  font-family: "TimesNewRomanExtraBold", serif;
-}
-
-.contact-info img {
-  height: 1.2rem; /* mismo alto que el texto */
-  width: auto;
-}
-/* --- Redes de contacto (ajuste final) --- */
-.contact-info {
-  margin-top: 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  max-width: 600px; /* mismo ancho que el formulario y botón */
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.contact-info a {
-  flex: 1; /* cada enlace ocupa la mitad del ancho */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.8rem;
-  text-decoration: none;
-  color: white;
-  font-family: "TimesNewRomanExtraBold", serif;
-  font-size: 1.6rem; /* más grande (ajusta si hace falta) */
-}
-
-.contact-info img {
-  height: 1.6rem; /* exactamente la misma altura que las letras */
-  width: auto;
-  vertical-align: middle; /* fuerza a alinearse al texto */
-}
-
-/* --- Versión móvil --- */
-@media (max-width: 768px) {
-  .contact-info {
-    flex-direction: column; /* en dos líneas */
-    gap: 1.2rem;
-    max-width: 400px; /* ancho adaptado al botón */
-  }
-
-  .contact-info a {
-    font-size: 1.5rem;
-  }
-
-  .contact-info img {
-    height: 1.5rem;
-  }
-}
-/* --- Redes de contacto (ajuste más grande y compacto) --- */
-.contact-info {
-  margin-top: 2rem;
-  display: flex;
-  justify-content: space-evenly; /* reparte más equilibrado que space-between */
-  align-items: center;
-  width: 100%;
-  max-width: 600px; /* mismo ancho que el botón */
-  margin-left: auto;
-  margin-right: auto;
-  gap: 10px; /* menos hueco entre ellos */
-}
-
-.contact-info a {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem; /* icono más pegado al texto */
-  text-decoration: none;
-  color: white;
-  font-family: "TimesNewRomanExtraBold", serif;
-  font-size: 1.9rem; /* más grande */
-}
-
-.contact-info img {
-  height: 1.9rem; /* mismo tamaño que letras */
-  width: auto;
-  vertical-align: middle;
-}
-
-/* --- Versión móvil --- */
-@media (max-width: 768px) {
-  .contact-info {
-    flex-direction: column;
-    gap: 1.4rem;
-    max-width: 400px;
-  }
-
-  .contact-info a {
-    font-size: 1.7rem;
-  }
-
-  .contact-info img {
-    height: 1.7rem;
-  }
-}
-/* Ajuste fino de iconos para alineación perfecta */
-.contact-info img {
-  height: 1.9rem; 
-  width: auto;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-/* Corrección específica para el icono de Instagram */
-.contact-info img[alt="Instagram"] {
-  transform: translateY(2px); /* lo baja un poquito */
-}
-/* --- Ajustes móviles globales --- */
-@media (max-width: 768px) {
-  /* Centrar todo en móvil */
-  body, section, .hero, .navbar, .contacto {
-    text-align: center;
-  }
-
-  /* Quién soy y Cita a ciegas - estructura forzada */
+  /* Quién soy y Cita a ciegas */
   .contenido-quien-soy,
   .contenido-cita-a-ciegas {
     display: flex !important;
-    flex-direction: column !important; /* título, foto, texto */
+    flex-direction: column !important;
     align-items: center !important;
     gap: 1rem;
+    text-align: center;
   }
 
   .texto-quien-soy h2,
-  .texto-cita-a-ciegas h2 {
-    order: 1 !important; /* título primero */
-    font-family: "TimesNewRomanExtraBold", serif;
-    text-align: center;
-    margin-bottom: 1rem;
-  }
-
-  .foto-quien-soy,
-  .foto-cita-a-ciegas {
-    order: 2 !important; /* foto después */
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
-
-  .texto-quien-soy p,
-  .texto-cita-a-ciegas p {
-    order: 3 !important; /* texto al final */
-    font-family: "Times New Roman", serif;
-    text-align: left;  /* alineado a la izquierda */
-    margin: 0 auto;
-    max-width: 90%;
-  }
-
-  /* Contacto bien centrado */
-  .contacto {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center !important;
-    margin: 0 auto;
-  }
-
-  .formulario-contacto {
-    margin: 0 auto !important;
-    text-align: center;
-  }
-
-  .contact-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.2rem;
-    width: 100%;
-    max-width: 400px;
-    margin: 2rem auto 0 auto;
-    text-align: center;
-  }
-
-  .contact-info a {
-    justify-content: center;
-    font-size: 1.5rem;
-    width: 100%;
-  }
-
-  .contact-info img {
-    height: 1.5rem;
-    width: auto;
-    vertical-align: middle;
-  }
-}
+  .texto-cita-a-ciegas h2
