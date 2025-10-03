@@ -452,3 +452,30 @@ p {
     width: auto;
   }
 }
+.contact-info {
+  display: flex;
+  flex-direction: row; /* en fila */
+  justify-content: space-between; /* que ocupen todo el ancho */
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 600px; /* el mismo ancho que el formulario */
+  margin: 2rem auto 0 auto;
+}
+
+.contact-info a {
+  flex: 1; /* cada enlace ocupa el mismo espacio */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: white;
+  font-family: "TimesNewRomanExtraBold", serif;
+}
+
+.contact-info img {
+  height: 1.2rem; /* mismo alto que el texto */
+  width: auto;
+}
