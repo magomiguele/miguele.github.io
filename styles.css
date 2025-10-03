@@ -164,49 +164,67 @@ p {
 }
 
 .formulario-contacto {
+  background-color: black; /* mismo fondo que la web */
+  padding: 2rem 3rem;
+  border-radius: 0; /* sin esquinas redondeadas */
+  box-shadow: none; /* sin sombra */
   max-width: 600px;
-  margin: 0 auto;
-  background: #111;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  width: 100%;
+  color: white;
+  font-family: 'Times New Roman', serif;
+  border: none; /* elimina cualquier borde */
 }
 
 .formulario-contacto h2 {
-  font-family: "TimesNewRomanExtraBold", serif;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-family: 'TimesNewRomanExtraBold', serif;
+  color: white;
+}
+
+.formulario-contacto form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .formulario-contacto label {
-  font-family: "TimesNewRomanExtraBold", serif;
-  display: block;
-  margin-bottom: 0.5rem;
+  font-family: 'TimesNewRomanExtraBold', serif;
+  font-size: 1.1rem;
 }
 
 .formulario-contacto input,
 .formulario-contacto textarea {
-  width: 100%;
-  padding: 0.8rem;
-  border: none;
+  padding: 1rem;
+  border: 1px solid white; /* borde blanco fino */
   border-radius: 5px;
-  margin-bottom: 1rem;
-  background: #222;
+  font-size: 1rem;
+  font-family: 'Times New Roman', serif;
+  background-color: black; /* cajas negras */
   color: white;
-  font-family: "Times New Roman", serif;
 }
 
+.formulario-contacto textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+/* --- BOTÓN ENVIAR --- */
 .formulario-contacto button {
-  padding: 0.8rem;
-  font-family: "TimesNewRomanExtraBold", serif;
-  background: white;
-  color: black;
+  padding: 1rem;
+  font-size: 1rem;
   border: none;
   border-radius: 5px;
+  background-color: red;   /* rojo vivo */
+  color: white;            /* letras blancas */
+  font-family: 'TimesNewRomanExtraBold', serif; /* tipografía extrabold */
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background-color 0.3s ease;
 }
 
 .formulario-contacto button:hover {
-  background: #ddd;
+  background-color: darkred; /* rojo más oscuro al pasar el ratón */
 }
 
 /* ---------------------------
@@ -273,4 +291,116 @@ p {
 
 .red-social:hover {
   opacity: 0.7;
+}
+/* --- Sección de contacto centrada --- */
+.contacto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* para que todo quede en columna */
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  background-color: #000;
+}
+
+/* --- Formulario --- */
+.formulario-contacto {
+  background-color: black;
+  padding: 2rem 3rem;
+  max-width: 600px;
+  width: 100%;
+  color: white;
+  font-family: 'Times New Roman', serif;
+  border: none;
+  box-shadow: none;
+  margin: 0 auto; /* centrado */
+  text-align: center;
+}
+
+/* --- Enlaces de redes y contacto --- */
+.contact-info {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 400px; /* mismo ancho que el botón */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-info a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  text-decoration: none;
+  color: white;
+  font-family: 'TimesNewRomanExtraBold', 'Times New Roman', serif;
+  font-size: 1.3rem;
+  width: 100%;
+}
+
+.contact-info img {
+  height: 1.3rem; /* mismo tamaño que el texto */
+  width: auto;
+  display: inline-block;
+}
+/* --- Ajustes móviles globales --- */
+@media (max-width: 768px) {
+  /* SECCIONES QUIÉN SOY y CITA A CIEGAS */
+  .contenido-quien-soy,
+  .contenido-cita-a-ciegas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .texto-quien-soy h2,
+  .texto-cita-a-ciegas h2 {
+    order: 1; /* título arriba */
+    margin-bottom: 1rem;
+  }
+
+  .foto-quien-soy,
+  .foto-cita-a-ciegas {
+    order: 2; /* foto en medio */
+    margin-bottom: 1rem;
+  }
+
+  .texto-quien-soy p,
+  .texto-cita-a-ciegas p {
+    order: 3; /* texto al final */
+    text-align: left;   /* alineado a la izquierda */
+  }
+
+  /* FORMULARIO CONTACTO */
+  .formulario-contacto {
+    margin: 0 auto; /* centrado */
+    text-align: center;
+  }
+
+  /* TELÉFONO E INSTAGRAM en móvil */
+  .contact-info {
+    display: flex;
+    flex-direction: column; /* cada uno en su línea */
+    gap: 1.2rem;
+    width: 100%;
+    max-width: 400px; /* mismo ancho que el botón */
+    margin: 2rem auto 0 auto;
+    text-align: center;
+  }
+
+  .contact-info a {
+    justify-content: center;
+    font-size: 1.5rem; /* más grande */
+    width: 100%;
+  }
+
+  .contact-info img {
+    height: 1.5rem; /* mismo alto que las letras */
+    width: auto;
+  }
 }
