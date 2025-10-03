@@ -591,18 +591,18 @@ p {
     text-align: center;
   }
 
-  /* Quién soy y Cita a ciegas - estructura */
+  /* Quién soy y Cita a ciegas - estructura forzada */
   .contenido-quien-soy,
   .contenido-cita-a-ciegas {
-    display: flex;
-    flex-direction: column; /* título, foto, texto */
-    align-items: center;    /* todo centrado */
+    display: flex !important;
+    flex-direction: column !important; /* título, foto, texto */
+    align-items: center !important;
     gap: 1rem;
   }
 
   .texto-quien-soy h2,
   .texto-cita-a-ciegas h2 {
-    order: 1; /* Título primero */
+    order: 1 !important; /* título primero */
     font-family: "TimesNewRomanExtraBold", serif;
     text-align: center;
     margin-bottom: 1rem;
@@ -610,7 +610,7 @@ p {
 
   .foto-quien-soy,
   .foto-cita-a-ciegas {
-    order: 2; /* Foto en medio */
+    order: 2 !important; /* foto después */
     margin-bottom: 1rem;
     display: flex;
     justify-content: center;
@@ -619,10 +619,48 @@ p {
 
   .texto-quien-soy p,
   .texto-cita-a-ciegas p {
-    order: 3; /* Texto al final */
+    order: 3 !important; /* texto al final */
     font-family: "Times New Roman", serif;
-    text-align: left;   /* alineado a la izquierda */
+    text-align: left;  /* alineado a la izquierda */
     margin: 0 auto;
-    max-width: 90%;     /* que no quede pegado a los lados */
+    max-width: 90%;
+  }
+
+  /* Contacto bien centrado */
+  .contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center !important;
+    margin: 0 auto;
+  }
+
+  .formulario-contacto {
+    margin: 0 auto !important;
+    text-align: center;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    width: 100%;
+    max-width: 400px;
+    margin: 2rem auto 0 auto;
+    text-align: center;
+  }
+
+  .contact-info a {
+    justify-content: center;
+    font-size: 1.5rem;
+    width: 100%;
+  }
+
+  .contact-info img {
+    height: 1.5rem;
+    width: auto;
+    vertical-align: middle;
   }
 }
