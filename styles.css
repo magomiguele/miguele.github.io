@@ -339,3 +339,17 @@ p {
     height: 1.7rem;
   }
 }
+/* ======== FIX PARA MOVILES: evitar scroll horizontal ======== */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Asegurar que imágenes y contenedores nunca se salgan */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
