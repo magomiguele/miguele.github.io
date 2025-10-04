@@ -55,6 +55,28 @@ section {
   color: gray;
 }
 
+/* --- Hamburguesa --- */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 18px;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1100;
+}
+
+.nav-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: white;
+  border-radius: 2px;
+}
+
 /* ---------------------------
    Hero (Inicio)
 --------------------------- */
@@ -155,6 +177,7 @@ p {
   margin: 0;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
+
 /* ---------------------------
    No ver para creer
 --------------------------- */
@@ -309,15 +332,30 @@ p {
     text-align: center;
   }
 
+  /* Menú móvil */
   .navbar ul {
+    display: none; /* Oculto por defecto */
+    flex-direction: column;
+    align-items: center;
     gap: 20px;
+    background: black;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    padding: 20px 0;
+    margin: 0;
+  }
+
+  .navbar ul.active {
+    display: flex; /* visible al activar */
   }
 
   .navbar a {
-    font-size: 1em;
+    font-size: 1.5em;
   }
 
-  /* Quién soy y Cita a ciegas */
+  /* Quién soy / Cita a ciegas */
   .contenido-quien-soy,
   .contenido-cita-a-ciegas {
     flex-direction: column;
@@ -348,74 +386,63 @@ p {
     margin: 0 auto;
     max-width: 90%;
   }
-   /* No ver para creer en móvil */
-.contenido-no-ver {
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  text-align: center;
+
+  /* No ver para creer */
+  .contenido-no-ver {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .texto-no-ver h2 {
+    order: 1;
+    margin-bottom: 1rem;
+  }
+
+  .foto-no-ver {
+    order: 2;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .texto-no-ver p {
+    order: 3;
+    text-align: left;
+    margin: 0 auto;
+    max-width: 90%;
+  }
+
+  /* Contacto */
+  .contacto {
+    padding: 2rem 1rem;
+  }
+
+  .formulario-contacto {
+    max-width: 100%;
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .contact-info {
+    flex-direction: column;
+    gap: 1.4rem;
+    width: 100%;
+    margin: 2rem auto 0 auto;
+    text-align: center;
+  }
+
+  .contact-info a {
+    font-size: 1.4rem;
+    white-space: nowrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
 }
 
-.texto-no-ver h2 {
-  order: 1;
-  margin-bottom: 1rem;
-}
-
-.foto-no-ver {
-  order: 2;
-  margin-bottom: 1rem;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.texto-no-ver p {
-  order: 3;
-  text-align: left;
-  margin: 0 auto;
-  max-width: 90%;
-}
-
-  /* Contacto en móvil */
-.contacto {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;   /* fuerza centrado */
-  text-align: center;
-  width: 100%;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-  box-sizing: border-box;
-}
-
-.formulario-contacto {
-  margin: 0 auto;
-  text-align: center;
-  max-width: 100%;       /* ocupa todo el ancho disponible */
-  width: 100%;
-  padding: 1.5rem;
-  box-sizing: border-box;
-}
-
-.contact-info {
-  flex-direction: column;
-  gap: 1.4rem;
-  width: 100%;
-  margin: 2rem auto 0 auto;
-  text-align: center;
-  box-sizing: border-box;
-}
-
-.contact-info a {
-  font-size: 1.4rem;         /* un poquito más pequeño que 1.7rem */
-  white-space: nowrap;       /* evita que se parta en dos líneas */
-  width: auto;               /* que ocupe lo que necesita, no toda la fila */
-  justify-content: center;   /* centrado igualmente */
-  gap: 0.5rem;               /* icono un poco más cerca */
-}
-}
-/* ======== FIX PARA MOVILES: evitar scroll horizontal ======== */
+/* ======== FIX scroll horizontal ======== */
 html, body {
   margin: 0;
   padding: 0;
@@ -423,123 +450,8 @@ html, body {
   width: 100%;
 }
 
-/* Asegurar que imágenes y contenedores nunca se salgan */
 img {
   max-width: 100%;
   height: auto;
   display: block;
-}
-/* ========== NAVBAR DESKTOP ========== */
-.nav-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
-.nav-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
-  position: absolute;
-  right: 20px;
-  top: 20px;
-}
-
-.nav-toggle span {
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  border-radius: 2px;
-}
-
-/* ========== NAVBAR MÓVIL ========== */
-@media (max-width: 768px) {
-  .nav-menu {
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background-color: black;
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    display: none; /* Oculto por defecto */
-    padding: 0;
-    margin: 0;
-  }
-
-  .nav-menu.active {
-    display: flex; /* Se muestra cuando lleva la clase active */
-  }
-
-  .nav-toggle {
-    display: flex;
-  }
-
-  .navbar ul {
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px 0;
-  }
-
-  .navbar a {
-    font-family: "TimesNewRomanExtraBold", serif;
-    font-size: 1.5em;
-    color: white;
-    text-decoration: none;
-  }
-}
-/* --- HAMBURGUESA --- */
-.nav-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 25px;
-  height: 18px;
-  cursor: pointer;
-}
-
-.nav-toggle span {
-  display: block;
-  height: 3px;
-  width: 100%;
-  background: white;
-  border-radius: 2px;
-}
-
-/* --- Menú móvil --- */
-@media (max-width: 768px) {
-  .nav-toggle {
-    display: flex;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 1100;
-  }
-
-  .nav-menu {
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background: black;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    width: 100%;
-    padding: 20px 0;
-    margin: 0;
-    display: none; /* oculto por defecto */
-  }
-
-  .nav-menu.active {
-    display: flex; /* visible al activar */
-  }
-
-  .nav-menu a {
-    font-family: "TimesNewRomanExtraBold", serif;
-    font-size: 1.5em;
-    color: white;
-    text-decoration: none;
-  }
 }
