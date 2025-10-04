@@ -435,3 +435,44 @@ img {
   height: auto;
   display: block;
 }
+/* ✅ Versión móvil */
+@media (max-width: 768px) {
+  .contact-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+  }
+
+  .contact-form {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    width: 100%;
+  }
+
+  .contact-info a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    gap: 8px;
+    color: white;
+    text-decoration: none;
+    font-family: 'TuTipografia', sans-serif;
+  }
+
+  .contact-info img {
+    height: 1.2em;
+    width: auto;
+  }
+}
