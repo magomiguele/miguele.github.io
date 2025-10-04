@@ -347,84 +347,101 @@ p {
     font-size: 1.5em;
   }
 
-  /* --- versión móvil: estructura vertical uniforme --- */
-.contenido-quien-soy,
-.contenido-cita-a-ciegas,
-.contenido-no-ver {
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  text-align: center;
-  margin: 3rem auto;
-  padding: 0 1.5rem;
-}
+  /* --- versión móvil mejor optimizada para todas las secciones --- */
+@media (max-width: 768px) {
+  /* Estructura general */
+  .contenido-quien-soy,
+  .contenido-cita-a-ciegas,
+  .contenido-no-ver {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    text-align: center;
+    margin: 2.5rem auto;
+    padding: 0 1rem;         /* 👈 menos margen lateral */
+    max-width: 100%;         /* ocupa todo el ancho del móvil */
+    box-sizing: border-box;
+  }
 
-.texto-quien-soy h2,
-.texto-cita-a-ciegas h2,
-.texto-no-ver h2 {
-  order: 1;
-  text-align: center;
-  font-size: 1.8rem;
-}
+  /* Títulos */
+  .texto-quien-soy h2,
+  .texto-cita-a-ciegas h2,
+  .texto-no-ver h2 {
+    order: 1;
+    text-align: center;
+    font-size: 1.7rem;       /* 👈 ligeramente más pequeño, más equilibrado */
+    margin-bottom: 1rem;
+  }
 
-.foto-quien-soy,
-.foto-cita-a-ciegas,
-.foto-no-ver {
-  order: 2;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
+  /* Fotos */
+  .foto-quien-soy,
+  .foto-cita-a-ciegas,
+  .foto-no-ver {
+    order: 2;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 380px;        /* 👈 tamaño homogéneo de imagen */
+  }
 
-.texto-quien-soy p,
-.texto-cita-a-ciegas p,
-.texto-no-ver p {
-  order: 3;
-  text-align: left;
-  font-size: 1.05rem;
-  line-height: 1.65;
-  margin: 0 auto;
-  max-width: 90%;
-}
+  .foto-quien-soy img,
+  .foto-cita-a-ciegas img,
+  .foto-no-ver img {
+    width: 90%;              /* 👈 margen suave sin apretar los bordes */
+    height: auto;
+    border-radius: 8px;
+  }
 
-  /* Contacto en móvil */
-.contacto {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;   /* fuerza centrado */
-  text-align: center;
-  width: 100%;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-  box-sizing: border-box;
-}
+  /* Texto */
+  .texto-quien-soy p,
+  .texto-cita-a-ciegas p,
+  .texto-no-ver p {
+    order: 3;
+    text-align: left;        /* 👈 alineado a la izquierda, más natural para leer */
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin: 0 auto;
+    width: 92%;              /* 👈 menos aire lateral */
+  }
 
-.formulario-contacto {
-  margin: 0 auto;
-  text-align: center;
-  max-width: 100%;       /* ocupa todo el ancho disponible */
-  width: 100%;
-  padding: 1.5rem;
-  box-sizing: border-box;
-}
+  /* Contacto en móvil (se mantiene el centrado previo) */
+  .contacto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+  }
 
-.contact-info {
-  flex-direction: column;
-  gap: 1.4rem;
-  width: 100%;
-  margin: 2rem auto 0 auto;
-  text-align: center;
-  box-sizing: border-box;
-}
+  .formulario-contacto {
+    margin: 0 auto;
+    text-align: center;
+    max-width: 100%;
+    width: 100%;
+    padding: 1.5rem;
+    box-sizing: border-box;
+  }
 
-.contact-info a {
-  font-size: 1.4rem;         /* un poquito más pequeño que 1.7rem */
-  white-space: nowrap;       /* evita que se parta en dos líneas */
-  width: auto;               /* que ocupe lo que necesita, no toda la fila */
-  justify-content: center;   /* centrado igualmente */
-  gap: 0.5rem;               /* icono un poco más cerca */
-}
+  .contact-info {
+    flex-direction: column;
+    gap: 1.4rem;
+    width: 100%;
+    margin: 2rem auto 0 auto;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .contact-info a {
+    font-size: 1.4rem;
+    white-space: nowrap;
+    width: auto;
+    justify-content: center;
+    gap: 0.5rem;
+  }
 }
 
 /* ======== FIX scroll horizontal ======== */
