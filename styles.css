@@ -140,24 +140,32 @@ p {
 }
 
 /* ---------------------------
-   Secciones principales (¿Quién soy? / Cita a ciegas / No ver para creer)
+   ¿Quién soy? / Cita a ciegas
 --------------------------- */
-.contenido-seccion {
+.contenido-quien-soy,
+.contenido-cita-a-ciegas {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 2rem;
   max-width: 1100px;
   margin: 0 auto;
-  flex-wrap: wrap;
 }
 
-.foto-seccion {
+.texto-quien-soy,
+.texto-cita-a-ciegas {
+  flex: 2;
+  max-width: 650px;
+}
+
+.foto-quien-soy,
+.foto-cita-a-ciegas {
   flex: 1;
   max-width: 320px;
 }
 
-.foto-seccion img {
+.foto-quien-soy img,
+.foto-cita-a-ciegas img {
   width: 100%;
   border-radius: 8px;
   object-fit: cover;
@@ -165,23 +173,34 @@ p {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
-.texto-seccion {
+/* ---------------------------
+   No ver para creer
+--------------------------- */
+.contenido-no-ver {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.foto-no-ver {
+  flex: 1;
+  max-width: 320px;
+}
+
+.foto-no-ver img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  margin: 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.texto-no-ver {
   flex: 2;
   max-width: 650px;
-}
-
-.texto-seccion h2 {
-  font-family: "TimesNewRomanExtraBold", serif;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.texto-seccion p {
-  font-size: 1.05em;
-  line-height: 1.65;
-  margin-bottom: 1rem;
-  text-align: justify;
 }
 
 /* ---------------------------
