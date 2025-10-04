@@ -322,35 +322,39 @@ p {
 
   /* Contacto en móvil */
 .contacto {
-  align-items: center;   /* asegura centrado horizontal */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;   /* fuerza centrado */
   text-align: center;
-  padding: 2rem 1rem;    /* un poco más estrecho en móvil */
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
 }
 
 .formulario-contacto {
-  margin: 0 auto;        /* centrado */
+  margin: 0 auto;
   text-align: center;
-  max-width: 100%;       /* que no limite raro en móvil */
-  padding: 1.5rem;       /* menos padding en móvil */
+  max-width: 100%;       /* ocupa todo el ancho disponible */
+  width: 100%;
+  padding: 1.5rem;
+  box-sizing: border-box;
 }
 
 .contact-info {
   flex-direction: column;
   gap: 1.4rem;
-  width: 100%;           /* ocupar todo */
-  max-width: 100%;       /* nada de quedarse más estrecho */
+  width: 100%;
   margin: 2rem auto 0 auto;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .contact-info a {
   font-size: 1.7rem;
   width: 100%;
   justify-content: center;
-}
-
-.contact-info img {
-  height: 1.7rem;
 }
 }
 /* ======== FIX PARA MOVILES: evitar scroll horizontal ======== */
