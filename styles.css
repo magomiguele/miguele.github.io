@@ -395,31 +395,42 @@ p {
     max-width: 90%;
   }
 
-  /* Contacto */
-  .contacto {
-    padding: 2rem 1rem;
-  }
+  /* Contacto en móvil */
+.contacto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;   /* fuerza centrado */
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
 
-  .formulario-contacto {
-    max-width: 100%;
-    width: 100%;
-    padding: 1.5rem;
-  }
+.formulario-contacto {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 100%;       /* ocupa todo el ancho disponible */
+  width: 100%;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
 
-  .contact-info {
-    flex-direction: column;
-    gap: 1.4rem;
-    width: 100%;
-    margin: 2rem auto 0 auto;
-    text-align: center;
-  }
+.contact-info {
+  flex-direction: column;
+  gap: 1.4rem;
+  width: 100%;
+  margin: 2rem auto 0 auto;
+  text-align: center;
+  box-sizing: border-box;
+}
 
-  .contact-info a {
-    font-size: 1.4rem;
-    white-space: nowrap;
-    justify-content: center;
-    gap: 0.5rem;
-  }
+.contact-info a {
+  font-size: 1.7rem;
+  width: 100%;
+  justify-content: center;
+}
 }
 
 /* ======== FIX scroll horizontal ======== */
@@ -434,45 +445,4 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
-}
-/* ✅ Versión móvil */
-@media (max-width: 768px) {
-  .contact-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0 20px;
-  }
-
-  .contact-form {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-
-  .contact-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin-top: 15px;
-    width: 100%;
-  }
-
-  .contact-info a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    gap: 8px;
-    color: white;
-    text-decoration: none;
-    font-family: 'TuTipografia', sans-serif;
-  }
-
-  .contact-info img {
-    height: 1.2em;
-    width: auto;
-  }
 }
