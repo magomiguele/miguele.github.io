@@ -148,10 +148,10 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 3rem;                    /* espacio uniforme entre foto y texto */
+  gap: 3rem;
   max-width: 1100px;
-  margin: 4rem auto;            /* margen vertical igualado */
-  padding: 0 2rem;              /* margen lateral común */
+  margin: 4rem auto;
+  padding: 0 2rem;
   box-sizing: border-box;
 }
 
@@ -160,9 +160,9 @@ p {
 .texto-no-ver {
   flex: 2;
   max-width: 650px;
-  font-size: 1.1rem;            /* tamaño homogéneo */
-  line-height: 1.65;            /* interlineado uniforme */
-  text-align: justify;          /* justificado igual en escritorio */
+  font-size: 1.1rem;
+  line-height: 1.65;
+  text-align: left;             /* 👈 alineado a la izquierda */
 }
 
 .texto-quien-soy h2,
