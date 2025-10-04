@@ -32,6 +32,9 @@ section {
   background-color: black;
   padding: 15px 0;
   z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .navbar ul {
@@ -55,26 +58,18 @@ section {
   color: gray;
 }
 
-/* --- Hamburguesa --- */
-.nav-toggle {
+/* Botón hamburguesa */
+.menu-toggle {
   display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 25px;
-  height: 18px;
+  font-size: 2rem;
+  color: white;
+  background: none;
+  border: none;
   cursor: pointer;
   position: absolute;
-  top: 20px;
   right: 20px;
+  top: 15px;
   z-index: 1100;
-}
-
-.nav-toggle span {
-  display: block;
-  height: 3px;
-  width: 100%;
-  background: white;
-  border-radius: 2px;
 }
 
 /* ---------------------------
@@ -333,8 +328,13 @@ p {
   }
 
   /* Menú móvil */
+  .navbar {
+    justify-content: flex-start;
+    padding: 15px;
+  }
+
   .navbar ul {
-    display: none; /* Oculto por defecto */
+    display: none;
     flex-direction: column;
     align-items: center;
     gap: 20px;
@@ -347,8 +347,12 @@ p {
     margin: 0;
   }
 
-  .navbar ul.active {
-    display: flex; /* visible al activar */
+  .navbar ul.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
   }
 
   .navbar a {
@@ -357,37 +361,7 @@ p {
 
   /* Quién soy / Cita a ciegas */
   .contenido-quien-soy,
-  .contenido-cita-a-ciegas {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    text-align: center;
-  }
-
-  .texto-quien-soy h2,
-  .texto-cita-a-ciegas h2 {
-    order: 1;
-    margin-bottom: 1rem;
-  }
-
-  .foto-quien-soy,
-  .foto-cita-a-ciegas {
-    order: 2;
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
-
-  .texto-quien-soy p,
-  .texto-cita-a-ciegas p {
-    order: 3;
-    text-align: left;
-    margin: 0 auto;
-    max-width: 90%;
-  }
-
-  /* No ver para creer */
+  .contenido-cita-a-ciegas,
   .contenido-no-ver {
     flex-direction: column;
     align-items: center;
@@ -395,11 +369,15 @@ p {
     text-align: center;
   }
 
+  .texto-quien-soy h2,
+  .texto-cita-a-ciegas h2,
   .texto-no-ver h2 {
     order: 1;
     margin-bottom: 1rem;
   }
 
+  .foto-quien-soy,
+  .foto-cita-a-ciegas,
   .foto-no-ver {
     order: 2;
     margin-bottom: 1rem;
@@ -408,6 +386,8 @@ p {
     width: 100%;
   }
 
+  .texto-quien-soy p,
+  .texto-cita-a-ciegas p,
   .texto-no-ver p {
     order: 3;
     text-align: left;
@@ -454,42 +434,4 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
-}
-/* ====== MENU HAMBURGUESA SOLO PARA MÓVIL ====== */
-.menu-toggle {
-  display: none;
-  font-size: 2rem;
-  color: white;
-  background: none;
-  border: none;
-  cursor: pointer;
-  margin-right: 20px;
-}
-
-@media (max-width: 768px) {
-  nav ul {
-    display: none; /* oculto por defecto */
-    flex-direction: column;
-    align-items: center;
-    background-color: black; /* igual que tu header */
-    position: absolute;
-    top: 60px; /* debajo del header */
-    right: 0;
-    width: 100%;
-    padding: 10px 0;
-  }
-
-  nav ul.show {
-    display: flex; /* se muestra cuando lleva la clase "show" */
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
 }
