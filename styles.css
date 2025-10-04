@@ -347,41 +347,45 @@ p {
     font-size: 1.5em;
   }
 
-  /* Quién soy / Cita a ciegas */
-  .contenido-quien-soy,
-  .contenido-cita-a-ciegas,
-  .contenido-no-ver {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    text-align: center;
-  }
+  /* --- versión móvil: estructura vertical uniforme --- */
+.contenido-quien-soy,
+.contenido-cita-a-ciegas,
+.contenido-no-ver {
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
 
-  .texto-quien-soy h2,
-  .texto-cita-a-ciegas h2,
-  .texto-no-ver h2 {
-    order: 1;
-    margin-bottom: 1rem;
-  }
+.texto-quien-soy h2,
+.texto-cita-a-ciegas h2,
+.texto-no-ver h2 {
+  order: 1;
+  text-align: center;
+  font-size: 1.8rem;
+}
 
-  .foto-quien-soy,
-  .foto-cita-a-ciegas,
-  .foto-no-ver {
-    order: 2;
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
+.foto-quien-soy,
+.foto-cita-a-ciegas,
+.foto-no-ver {
+  order: 2;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 
-  .texto-quien-soy p,
-  .texto-cita-a-ciegas p,
-  .texto-no-ver p {
-    order: 3;
-    text-align: left;
-    margin: 0 auto;
-    max-width: 90%;
-  }
+.texto-quien-soy p,
+.texto-cita-a-ciegas p,
+.texto-no-ver p {
+  order: 3;
+  text-align: left;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  margin: 0 auto;
+  max-width: 90%;
+}
 
   /* Contacto en móvil */
 .contacto {
