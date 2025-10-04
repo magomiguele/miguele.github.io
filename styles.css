@@ -455,3 +455,41 @@ img {
   height: auto;
   display: block;
 }
+/* ====== MENU HAMBURGUESA SOLO PARA MÓVIL ====== */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    display: none; /* oculto por defecto */
+    flex-direction: column;
+    align-items: center;
+    background-color: black; /* igual que tu header */
+    position: absolute;
+    top: 60px; /* debajo del header */
+    right: 0;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  nav ul.show {
+    display: flex; /* se muestra cuando lleva la clase "show" */
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
