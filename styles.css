@@ -352,9 +352,11 @@ p {
 }
 
 .contact-info a {
-  font-size: 1.7rem;
-  width: 100%;
-  justify-content: center;
+  font-size: 1.4rem;         /* un poquito más pequeño que 1.7rem */
+  white-space: nowrap;       /* evita que se parta en dos líneas */
+  width: auto;               /* que ocupe lo que necesita, no toda la fila */
+  justify-content: center;   /* centrado igualmente */
+  gap: 0.5rem;               /* icono un poco más cerca */
 }
 }
 /* ======== FIX PARA MOVILES: evitar scroll horizontal ======== */
