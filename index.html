@@ -192,12 +192,11 @@
   const navToggle = document.getElementById("nav-toggle");
   const navMenu = document.getElementById("nav-menu");
 
-  // Abrir/cerrar menú al tocar hamburguesa
   navToggle.addEventListener("click", () => {
     navMenu.classList.toggle("active");
   });
 
-  // Cerrar menú automáticamente al pulsar un enlace
+  // cerrar al pulsar enlace
   document.querySelectorAll(".nav-menu a").forEach(link =>
     link.addEventListener("click", () => {
       navMenu.classList.remove("active");
