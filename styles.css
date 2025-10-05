@@ -598,3 +598,53 @@ img {
     text-align: inherit !important;
   }
 }
+/* ======== FIX FINAL: Igualar "No ver para creer" con el resto en móvil ======== */
+@media (max-width: 768px) {
+  .contenido-no-ver {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 12px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+    gap: 1rem !important;
+  }
+
+  .texto-no-ver {
+    width: 100% !important;
+    max-width: 720px !important;
+    margin: 0 auto !important;
+    text-align: left !important;
+    line-height: 1.55 !important;
+    font-size: 1.02rem !important;
+  }
+
+  .texto-no-ver h2 {
+    text-align: center !important;
+    font-size: 1.8rem !important;
+    margin-bottom: 0.9rem !important;
+    line-height: 1.15 !important;
+  }
+
+  .texto-no-ver p {
+    text-align: left !important;
+    margin: 0 0 1rem 0 !important;
+  }
+
+  .foto-no-ver {
+    width: 100% !important;
+    max-width: 420px !important;
+    margin: 0 auto 0.9rem auto !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  .foto-no-ver img {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 8px !important;
+    display: block !important;
+  }
+}
