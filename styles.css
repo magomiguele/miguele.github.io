@@ -649,65 +649,60 @@ img {
   }
 }
 /* --- Ajustes menú hamburguesa --- */
+/* ======== MENÚ HAMBURGUESA ======== */
+
 .menu-toggle {
-  position: fixed;
-  top: 20px;         /* separa del borde superior */
-  right: 25px;       /* separa del borde derecho */
-  background: none;
-  border: none;
+  display: none;
   font-size: 2rem;
   color: white;
-  z-index: 1001;
+  background: none;
+  border: none;
   cursor: pointer;
-}
-
-/* --- Menú móvil --- */
-.navbar ul {
   position: fixed;
-  top: 0;
-  right: 0;
-  height: 100vh;
-  width: 70%;
-  max-width: 300px;
-  background: transparent; /* ← Sin fondo negro */
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transform: translateX(100%);
-  transition: transform 0.3s ease-in-out;
-  z-index: 1001;
+  top: 20px;
+  right: 25px; /* <-- separa el botón del borde */
+  z-index: 2000;
 }
 
-.navbar ul.show {
-  transform: translateX(0);
-}
+/* Estilos para móviles */
+@media (max-width: 768px) {
+  .navbar ul {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 75%;
+    max-width: 300px;
+    background: rgba(0, 0, 0, 0.85); /* semitransparente */
+    backdrop-filter: blur(10px);
+    list-style: none;
+    padding: 5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1500;
+  }
 
-.navbar ul li {
-  margin: 1rem 0;
-}
+  .navbar ul.show {
+    transform: translateX(0);
+  }
 
-.navbar ul li a {
-  text-decoration: none;
-  color: white;
-  font-size: 1.3rem;
-  font-weight: bold;
-}
+  body.menu-open::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+  }
 
-/* --- Efecto de difuminado del fondo cuando el menú está activo --- */
-body.menu-open {
-  overflow: hidden;
-}
-
-body.menu-open::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  backdrop-filter: blur(8px);
-  background: rgba(0, 0, 0, 0.3);
-  z-index: 999;
+  .menu-toggle {
+    display: block;
+  }
 }
