@@ -669,8 +669,7 @@ img {
   height: 100vh;
   width: 70%;
   max-width: 300px;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(6px); /* difumina el fondo */
+  background: transparent; /* ← Sin fondo negro */
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -678,7 +677,7 @@ img {
   align-items: center;
   transform: translateX(100%);
   transition: transform 0.3s ease-in-out;
-  z-index: 1000;
+  z-index: 1001;
 }
 
 .navbar ul.show {
