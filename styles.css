@@ -704,3 +704,9 @@ img {
     display: block;
   }
 }
+.contenido-quien-soy,
+.contenido-cita-a-ciegas,
+.contenido-no-ver {
+  display: flex;
+  align-items: center; /* centra verticalmente ambos bloques */
+}
