@@ -457,3 +457,60 @@ img {
   height: auto;
   display: block;
 }
+/* ======== Secciones centrales en móvil ======== */
+.contenido-quien-soy,
+.contenido-cita-a-ciegas,
+.contenido-no-ver {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  max-width: 100%;
+  width: 100%;
+  padding: 0 1rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.texto-quien-soy,
+.texto-cita-a-ciegas,
+.texto-no-ver {
+  max-width: 95%;
+  margin: 0 auto;
+  text-align: center; /* centrado en móvil */
+  line-height: 1.6;
+  font-size: 1.05em;
+}
+
+.texto-quien-soy h2,
+.texto-cita-a-ciegas h2,
+.texto-no-ver h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.texto-quien-soy p,
+.texto-cita-a-ciegas p,
+.texto-no-ver p {
+  text-align: center; /* sin justificar */
+  margin: 0 auto;
+  max-width: 95%;
+}
+
+.foto-quien-soy,
+.foto-cita-a-ciegas,
+.foto-no-ver {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 380px;
+}
+
+.foto-quien-soy img,
+.foto-cita-a-ciegas img,
+.foto-no-ver img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
