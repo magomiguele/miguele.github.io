@@ -29,17 +29,20 @@
       padding: 2rem;
     }
 
-    .left, .right {
+    .left {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .right {
       flex: 1;
       display: flex;
       align-items: center;
       justify-content: center;
-    }
-
-    .left {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 2rem;
     }
 
     .logo {
@@ -64,9 +67,7 @@
     }
   </style>
 </head>
-
 <body>
-  <!-- NAVBAR -->
   <header class="navbar">
     <button class="menu-toggle">&#9776;</button>
     <ul>
@@ -77,7 +78,6 @@
     </ul>
   </header>
 
-  <!-- INICIO -->
   <section id="inicio" class="hero">
     <div class="left">
       <img src="Logotipo_Miguele.tif" alt="Logotipo Miguele" class="logo" />
@@ -91,13 +91,12 @@
     </div>
   </section>
 
-  <!-- QUIÉN SOY -->
-  <section id="quien-soy" class="seccion">
-    <div class="contenido">
-      <div class="foto">
+  <section id="quien-soy" class="quien-soy">
+    <div class="contenido-quien-soy">
+      <div class="foto-quien-soy">
         <img src="Miguele_alta_calidad_foto_Pablo_Ibanez_216.jpg" alt="Foto de Miguelé">
       </div>
-      <div class="texto">
+      <div class="texto-quien-soy">
         <h2>¿Quién soy?</h2>
         <p>Mi nombre es Miguel Mariñoso, aunque suelen llamarme Miguelé, y soy un mago y filósofo zaragozano que acerca la Magia a lo cotidiano. Desde que a los seis años una caja de juegos de Magia cayó en mis manos, este arte se convirtió en mi manera de explorar el mundo y compartirlo con los demás. Mi discapacidad visual (con tan sólo un 13% de visión), lejos de ser un obstáculo, contribuye a forjar un estilo muy personal y único que mezcla humor, cercanía y sinceridad.</p>
         <p>Para mí, el Ilusionismo no es sólo un arte escénico, sino una conversación a través de la cual compartir un rato agradable sin barreras.</p>
@@ -108,29 +107,30 @@
     </div>
   </section>
 
-  <!-- CITA A CIEGAS -->
-  <section id="cita-a-ciegas" class="seccion">
-    <div class="contenido invertido">
-      <div class="texto">
-        <h2>Cita a ciegas</h2>
+  <section id="cita-a-ciegas" class="cita-a-ciegas">
+    <div class="contenido-cita-a-ciegas">
+      <div class="texto-cita-a-ciegas">
+        <h2 class="titulo-extra-bold">Cita a ciegas</h2>
         <p><em>Cita a ciegas</em> no es sólo un espectáculo de Magia de cerca sino, como el título indica, una experiencia de encuentro entre personas desconocidas: el público y yo, quienes iremos conociéndonos a lo largo de la velada a través de la Magia.</p>
         <p>En el espectáculo, apto para todas las edades, aunque recomendado a partir de doce años, los juegos de Micromagia, Cartomagia y Magia de Salón con monedas, cartas, cubiletes, etc. se tornan herramientas de expresión artística y comunicación útiles para hablar por sí mismas desde Filosofía hasta las cuestiones más banales del día a día, siempre con una dosis generosa de humor socarrón y cercano, marcado por la discapacidad visual que me atraviesa por completo y, por tanto, también mi Magia.</p>
         <p>La cita se divide en tres principales bloques: el primero, a modo introductorio, se compone de efectos clásicos de Micromagia con diferentes elementos; el segundo se centra en la Numismagia, juegos de Magia con monedas y billetes, mi especialidad; por último, un bloque en el que experimentamos la Magia a través de sentidos diferentes a la vista.</p>
         <p>Durante los setenta minutos que dura esta cita el público vive en primera persona momentos únicos y verdaderamente mágicos explorando nuevas realidades por medio de la Magia, un arte capaz tanto de transmitir como de transformar la realidad.</p>
       </div>
-      <div class="foto">
-        <img src="Miguele_alta_calidad_foto_Pablo_Ibanez_266.jpg" alt="Cita a ciegas">
+      <div class="foto-cita-a-ciegas">
+        <img src="Miguele_alta_calidad_foto_Pablo_Ibanez_266.jpg" alt="Foto Cita a ciegas" class="foto">
       </div>
     </div>
   </section>
 
-  <!-- NO VER PARA CREER -->
-  <section id="no-ver-para-creer" class="seccion">
-    <div class="contenido">
-      <div class="foto">
-        <img src="Miguele_alta_calidad_foto_Pablo_Ibanez_017.jpg" alt="No ver para creer">
+  <!-- =========================
+       No ver para creer
+  ========================= -->
+  <section id="no-ver-para-creer" class="no-ver-para-creer">
+    <div class="contenido-no-ver">
+      <div class="foto-no-ver">
+        <img src="Miguele_alta_calidad_foto_Pablo_Ibanez_017.jpg" alt="No ver para creer" class="foto">
       </div>
-      <div class="texto">
+      <div class="texto-no-ver">
         <h2>No ver para creer</h2>
         <p>Suele decirse que en la Magia el público es ciego. Pero, ¿y si por una vez fuese al revés?</p>
         <p>No es necesario ver para creer en la Magia, existen diferentes fórmulas para disfrutarla. Como dice mi maestro Sergio Cisneros, mientras la mayoría vive la Magia mediante la vista como una película, yo la experimento a través de la imaginación como un libro.</p>
@@ -140,7 +140,6 @@
     </div>
   </section>
 
-  <!-- CONTACTO -->
   <section id="contacto" class="contacto">
     <div class="formulario-contacto">
       <h2>Contacto</h2>
@@ -156,7 +155,6 @@
 
         <button type="submit">Enviar</button>
       </form>
-
       <div class="contact-info">
         <a href="tel:616347150">
           <img src="whatsapp-white.png" alt="WhatsApp">
@@ -170,7 +168,6 @@
     </div>
   </section>
 
-  <!-- SCRIPTS -->
   <script>
     document.querySelector(".menu-toggle").addEventListener("click", function() {
       document.querySelector(".navbar ul").classList.toggle("show");
