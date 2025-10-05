@@ -710,3 +710,9 @@ img {
   display: flex;
   align-items: center; /* centra verticalmente ambos bloques */
 }
+.foto-quien-soy img,
+.foto-cita-a-ciegas img,
+.foto-no-ver img {
+  max-height: 600px;
+  object-fit: cover;
+}
