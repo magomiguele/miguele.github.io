@@ -21,41 +21,39 @@ section {
   box-sizing: border-box;
 }
 
-/* ---------------------------
-   Menú de navegación
---------------------------- */
+/* ======== MENÚ ESCRITORIO DIFUMINADO ======== */
+
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: black;
-  padding: 15px 0;
-  z-index: 1000;
   display: flex;
   justify-content: center;
-  align-items: center;
+  background: rgba(0, 0, 0, 0.6); /* Semitransparente */
+  backdrop-filter: blur(10px); /* Efecto de difuminado */
+  padding: 1rem 0;
+  z-index: 2000;
 }
 
 .navbar ul {
+  display: flex;
+  gap: 2rem;
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  gap: 40px;
 }
 
 .navbar a {
-  font-family: "TimesNewRomanExtraBold", serif;
-  font-size: 1.3em;
-  color: white;
   text-decoration: none;
+  color: white;
+  font-family: 'TimesNewRomanExtraBold', serif;
+  font-size: 1.1rem;
   transition: color 0.3s;
 }
 
 .navbar a:hover {
-  color: gray;
+  color: #cccccc;
 }
 
 /* Botón hamburguesa */
