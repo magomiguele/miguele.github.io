@@ -171,19 +171,20 @@
 
   <script>
   const menuToggle = document.querySelector(".menu-toggle");
-  const navMenu = document.querySelector(".navbar ul");
+  const navbar = document.querySelector(".navbar ul");
+  const body = document.body;
 
-  // abrir/cerrar el menú
+  // Alternar menú al tocar la hamburguesa
   menuToggle.addEventListener("click", () => {
-    navMenu.classList.toggle("show");
-    document.body.classList.toggle("menu-open");
+    navbar.classList.toggle("show");
+    body.classList.toggle("menu-open"); // activa/desactiva el difuminado
   });
 
-  // cerrar menú al pulsar cualquier enlace
+  // Cerrar el menú al hacer clic en un enlace
   document.querySelectorAll(".navbar a").forEach(link => {
     link.addEventListener("click", () => {
-      navMenu.classList.remove("show");
-      document.body.classList.remove("menu-open");
+      navbar.classList.remove("show");
+      body.classList.remove("menu-open");
     });
   });
 </script>
