@@ -900,3 +900,70 @@ body.menu-open .navbar {
     box-shadow: none !important;
   }
 }
+/* ======== REPARACIÓN MENÚ MÓVIL (versión estable y funcional) ======== */
+@media (max-width: 768px) {
+
+  /* Asegura que el menú hamburguesa esté siempre visible y clicable */
+  .menu-toggle {
+    position: fixed !important;
+    top: 18px;
+    right: 18px;
+    z-index: 3001 !important;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+  }
+
+  /* Fondo difuminado completo y clicable */
+  body.menu-open::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 3000;
+  }
+
+  /* Bloque del menú centrado y visible */
+  .navbar ul.show {
+    position: fixed !important;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex !important;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.3rem;
+    padding: 2rem;
+    width: 80%;
+    max-width: 320px;
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: 10px;
+    z-index: 3002;
+  }
+
+  .navbar ul.show li a {
+    color: white !important;
+    text-decoration: none;
+    font-family: "TimesNewRomanExtraBold", serif;
+    font-size: 1.6rem;
+    text-align: left;
+  }
+
+  /* Evita el scroll del fondo al abrir el menú */
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  /* Barra superior invisible cuando el menú está abierto */
+  body.menu-open .navbar {
+    background: none !important;
+    box-shadow: none !important;
+  }
+}
