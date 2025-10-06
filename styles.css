@@ -736,25 +736,24 @@ img {
 
 /* Estilos para móviles */
 @media (max-width: 768px) {
-  .navbar ul {
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: 75%;
-    max-width: 300px;
-    background: rgba(0, 0, 0, 0.85); /* semitransparente */
-    backdrop-filter: blur(10px);
-    list-style: none;
-    padding: 5rem 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2rem;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    z-index: 1500;
-  }
+  .navbar ul.show {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* menos opaco, más elegante */
+  backdrop-filter: blur(8px);
+  justify-content: center;   /* centra verticalmente */
+  align-items: center;       /* centra horizontalmente */
+  text-align: center;
+  gap: 1.5rem;
+  z-index: 1000;
+  padding: 0;
+  margin: 0;
+}
 
   .navbar ul.show {
     transform: translateX(0);
