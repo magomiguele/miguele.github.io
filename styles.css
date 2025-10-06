@@ -840,7 +840,7 @@ body.menu-open::before {
   backdrop-filter: blur(5px);
   z-index: 5;
 }
-/* ✅ Fondo uniforme al abrir menú hamburguesa en móvil */
+   /* ✅ Fondo uniforme al abrir menú hamburguesa en móvil */
 @media (max-width: 768px) {
   .navbar ul {
     background: transparent !important; /* quita el marco oscuro del menú */
