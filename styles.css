@@ -754,7 +754,7 @@ img {
 
   /* 🔹 Cuando el menú está abierto, se difumina el fondo */
   body.menu-open .navbar {
-    background: rgba(0, 0, 0, 0.3) !important;
+    background: rgba(0, 0, 0, 0.15) !important;
     backdrop-filter: blur(8px) !important;
   }
 
