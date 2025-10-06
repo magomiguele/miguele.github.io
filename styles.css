@@ -716,3 +716,24 @@ img {
   max-height: 600px;
   object-fit: cover;
 }
+/* Ocultar barra difuminada en móviles */
+@media (max-width: 768px) {
+  .navbar {
+    background: none !important; /* Quita el fondo difuminado */
+    backdrop-filter: none !important; /* Desactiva el difuminado */
+    box-shadow: none !important; /* Por si tenía sombreado */
+  }
+
+  /* Aseguramos que el botón hamburguesa siga visible */
+  .navbar .menu-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 9999;
+  }
+
+  /* Ocultamos cualquier borde o marco */
+  .navbar::before {
+    display: none !important;
+  }
+}
