@@ -819,3 +819,84 @@ body.menu-open .navbar {
     text-align: left !important;
   }
 }
+/* ===== MENÚ MÓVIL ARREGLADO ===== */
+@media (max-width: 768px) {
+  /* Barra base en móvil (transparente) */
+  .navbar {
+    background: none !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Overlay difuminado en todo el fondo */
+  body.menu-open::before {
+    content: "";
+    position: fixed;
+    inset: 0; /* cubre todo */
+    background: rgba(0,0,0,0.5); /* un poco más oscuro */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1200;
+  }
+
+  /* Menú oculto inicialmente */
+  .navbar ul {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* centrado en pantalla */
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;  /* texto alineado a la izquierda */
+    gap: 1rem;
+    margin: 0;
+    padding: 2rem;
+    z-index: 1300;            /* por encima del overlay */
+    background: rgba(0,0,0,0.7); /* bloque negro semitransparente */
+    border-radius: 8px;
+    min-width: 70%;           /* ancho mínimo, centrado */
+    max-width: 320px;         /* para que no se desmadre */
+  }
+
+  /* Menú visible */
+  .navbar ul.show {
+    display: flex;
+  }
+
+  /* Estilos de los enlaces */
+  .navbar ul.show > li {
+    list-style: none;
+    width: 100%;
+  }
+
+  .navbar ul.show > li > a {
+    display: block;
+    text-align: left;       /* texto alineado a la izquierda */
+    width: 100%;
+    font-size: 1.6rem;
+    font-family: "TimesNewRomanExtraBold", serif;
+    color: white;
+    text-decoration: none;
+    padding: 0.3rem 0;
+  }
+
+  /* Botón hamburguesa */
+  .menu-toggle {
+    display: block !important;
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    z-index: 1400; /* por encima de todo */
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+  }
+
+  /* Ocultar barra detrás del menú */
+  body.menu-open .navbar {
+    background: none !important;
+    box-shadow: none !important;
+  }
+}
