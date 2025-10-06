@@ -1020,3 +1020,73 @@ html {
   color: white !important;
   outline: none !important;
 }
+/* ✅ MENÚ HAMBURGUESA ARREGLADO (centrado y con fondo completo) */
+@media (max-width: 768px) {
+
+  /* --- Oculta difuminado en barra al principio --- */
+  .navbar {
+    background: none !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+    z-index: 1000;
+  }
+
+  /* --- Menú hamburguesa oculto inicialmente --- */
+  .navbar ul {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   /* centra verticalmente */
+    align-items: center;       /* centra horizontalmente */
+    gap: 2rem;
+    background: transparent;
+    transform: translateY(-100%);
+    transition: transform 0.35s ease;
+    z-index: 2001; /* por encima del difuminado */
+    padding: 0;
+    margin: 0;
+  }
+
+  /* --- Menú visible al abrirse --- */
+  .navbar ul.show {
+    transform: translateY(0);
+  }
+
+  /* --- Enlaces dentro del menú --- */
+  .navbar a {
+    font-family: "TimesNewRomanExtraBold", serif;
+    font-size: 1.8rem;
+    color: white;
+    text-decoration: none;
+  }
+
+  /* --- Fondo difuminado global (por detrás del menú y del botón) --- */
+  body.menu-open::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 2000; /* debajo del menú pero encima de todo lo demás */
+  }
+
+  /* --- Botón hamburguesa fijo arriba a la derecha --- */
+  .menu-toggle {
+    display: block !important;
+    position: fixed !important;
+    top: 20px !important;
+    right: 25px !important;
+    z-index: 2002 !important; /* encima de todo */
+  }
+
+  /* --- Al abrir el menú, la barra desaparece visualmente --- */
+  body.menu-open .navbar {
+    background: transparent !important;
+    backdrop-filter: none !important;
+  }
+}
