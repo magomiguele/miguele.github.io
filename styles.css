@@ -770,3 +770,52 @@ html {
   }
 }
 /* ======= FIN MENÚ MÓVIL FINAL ======= */
+.menu-toggle {
+  display: none; /* por defecto oculto */
+}
+.navbar ul {
+  background: none !important; /* fondo transparente */
+  z-index: 1300;              /* encima del overlay (1250) */
+}
+.navbar ul.show > li > a {
+  text-align: left !important;
+  width: 100%;
+}
+/* ======= FIX LIMPIEZA FINAL ======= */
+
+/* 1. Hamburguesa solo en móvil */
+.menu-toggle {
+  display: none;
+}
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block !important;
+  }
+}
+
+/* 2. Menú sobre overlay y texto legible */
+.navbar ul {
+  background: none !important;
+  z-index: 1300 !important;
+}
+.navbar ul.show > li > a {
+  text-align: left !important;
+  width: 100%;
+  font-size: 1.8rem !important; /* más grande en móvil */
+}
+
+/* 3. Evitar difuminado en la barra al abrir menú */
+body.menu-open .navbar {
+  background: none !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+}
+
+/* 4. Limpieza de alineaciones en secciones (texto a la izquierda) */
+@media (max-width: 768px) {
+  .texto-quien-soy,
+  .texto-cita-a-ciegas,
+  .texto-no-ver {
+    text-align: left !important;
+  }
+}
