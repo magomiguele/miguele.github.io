@@ -30,8 +30,13 @@ section {
   width: 100%;
   display: flex;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.6); /* Semitransparente */
-  backdrop-filter: blur(10px); /* Efecto de difuminado */
+  /* ✅ Barra superior difuminada igual que el menú móvil */
+.navbar {
+  background: rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: none;
+}
   padding: 1rem 0;
   z-index: 2000;
 }
