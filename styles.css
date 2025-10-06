@@ -902,11 +902,13 @@ section {
   margin: 0 auto !important;
   padding: 0 !important;
 }
-/* ✅ Que las secciones empiecen justo en el borde superior al hacer clic en el menú */
+
+   /* ✅ Ajuste del scroll: el título queda casi al inicio */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 70px; /* ajusta según el alto de tu barra */
+  scroll-padding-top: 40px;
 }
+   
 /* ✅ Menú hamburguesa centrado y con fondo difuminado */
 @media (max-width: 768px) {
   .navbar ul {
