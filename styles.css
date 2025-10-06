@@ -1090,3 +1090,96 @@ html {
     backdrop-filter: none !important;
   }
 }
+/* ======= BLOQUE: MENÚ MÓVIL CORREGIDO (pegar al final de styles.css) ======= */
+@media (max-width: 768px) {
+
+  /* 1) Barra superior: dejamos transparente por defecto en móvil */
+  .navbar {
+    background: none !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+    z-index: 1000;
+  }
+
+  /* 2) Menú oculto por defecto: ocupa pantalla (inset) para poder centrar su contenido */
+  .navbar ul {
+    position: fixed;
+    inset: 0;                 /* top:0; right:0; bottom:0; left:0; */
+    display: none;           /* oculto hasta que tenga .show */
+    justify-content: center; /* centra verticalmente el panel */
+    align-items: center;     /* centra horizontalmente el panel */
+    margin: 0;
+    padding: 0;
+    z-index: 1300;           /* por encima de overlay */
+    background: transparent; /* no queremos marco negro */
+    box-sizing: border-box;
+  }
+
+  /* 3) Overlay (fondo difuminado): aparece cuando body tiene .menu-open.
+        Debe tener z-index **menor** que el menú para que el menú no se difumine. */
+  body.menu-open::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.32);   /* ajusta opacidad si lo quieres más flojo */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1250; /* debajo del menú (1300) y encima del resto del contenido (1000) */
+    pointer-events: auto;
+  }
+
+  /* 4) Menú visible: lo mostramos como columna centrada.
+        Aquí definimos un "panel" central dentro del ul mediante el ancho de los li. */
+  .navbar ul.show {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: center; /* centra los li en bloque; luego cada li tendrá ancho fijo */
+    justify-content: center;
+    padding: 0;
+  }
+
+  /* 5) Cada item (li) será un bloque con ancho limitado para que el conjunto quede centrado,
+        pero el texto del enlace se alinea a la izquierda dentro de ese bloque. */
+  .navbar ul.show > li {
+    list-style: none;
+    width: min(640px, 92%); /* ancho del panel: centrado en pantalla, respeta móviles */
+    box-sizing: border-box;
+  }
+
+  .navbar ul.show > li > a {
+    display: block;
+    width: 100%;
+    padding: .35rem 0;          /* separación entre enlaces */
+    text-align: left;          /* -> alineado a la izquierda como querías */
+    font-size: 1.6rem;         /* más grande y legible en móvil */
+    font-family: "TimesNewRomanExtraBold", serif;
+    color: white;
+    text-decoration: none;
+  }
+
+  /* 6) Botón hamburguesa: fijo y por encima de todo */
+  .menu-toggle {
+    display: block !important;
+    position: fixed !important;
+    top: 18px !important;
+    right: 18px !important;
+    z-index: 1400 !important;
+    background: none;
+    border: none;
+  }
+
+  /* 7) Evitar que la navbar fija se vea iluminada encima del overlay */
+  body.menu-open .navbar {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+  }
+
+  /* 8) Animación suave (opcional) */
+  .navbar ul {
+    transition: opacity .25s ease, transform .25s ease;
+  }
+  .navbar ul.show { transform: none; opacity: 1; }
+}
+/* ======= FIN BLOQUE MENÚ MÓVIL CORREGIDO ======= */
