@@ -364,37 +364,52 @@ p {
     text-align: center;
   }
 
-  /* Menú móvil */
-  .navbar {
-    justify-content: flex-start;
-    padding: 15px;
-  }
-
+  /* ✅ Menú hamburguesa centrado y con fondo difuminado */
+@media (max-width: 768px) {
   .navbar ul {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    background: black;
-    position: absolute;
-    top: 60px;
-    right: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    padding: 20px 0;
-    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   /* centra verticalmente */
+    align-items: center;       /* centra horizontalmente */
+    gap: 2rem;
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transform: translateY(-100%);
+    transition: transform 0.35s ease;
+    z-index: 1500;
   }
 
   .navbar ul.show {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
+    transform: translateY(0);
   }
 
   .navbar a {
-    font-size: 1.5em;
+    font-family: "TimesNewRomanExtraBold", serif;
+    font-size: 1.8rem;
+    color: white;
+    text-decoration: none;
   }
+
+  /* Fondo difuminado global al abrir el menú */
+  body.menu-open::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1000;
+  }
+}
 
   /* --- versión móvil mejor optimizada para todas las secciones --- */
 @media (max-width: 768px) {
