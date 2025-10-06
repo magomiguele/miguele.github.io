@@ -23,7 +23,7 @@ section {
 
 /* ======== MENÚ ESCRITORIO DIFUMINADO ======== */
 
-/* ====== BARRA DE NAVEGACIÓN ====== */
+/* ✅ Barra de navegación fija con mismo difuminado que menú móvil */
 .navbar {
   position: fixed;
   top: 0;
@@ -34,8 +34,7 @@ section {
   align-items: center;
   padding: 1rem 0;
   z-index: 1000;
-
-  background: rgba(0, 0, 0, 0.3); /* Fondo oscuro translúcido */
+  background: rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
