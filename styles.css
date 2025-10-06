@@ -763,3 +763,12 @@ img {
     transition: background 0.3s ease, backdrop-filter 0.3s ease;
   }
 }
+section {
+  padding: 4rem 2rem; /* antes seguro estaba en torno a 6rem o más */
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 3rem 1.5rem;
+  }
+}
