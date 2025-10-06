@@ -30,12 +30,11 @@ section {
   width: 100%;
   display: flex;
   justify-content: center;
-  /* ✅ Barra superior difuminada igual que el menú móvil */
-.navbar {
-  background: rgba(0, 0, 0, 0.12);
+  background: rgba(0, 0, 0, 0.25); /* leve oscurecimiento */
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   box-shadow: none;
+  transition: background 0.3s ease;
 }
   padding: 1rem 0;
   z-index: 2000;
