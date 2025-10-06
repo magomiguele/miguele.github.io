@@ -59,6 +59,12 @@ section {
 .navbar a:hover {
   color: #f5b400;
 }
+/* Evitar que los enlaces cambien de color al hacer clic o quedar activos */
+.navbar a:focus,
+.navbar a:active,
+.navbar a:visited {
+  color: white !important;
+}
 
 /* ✅ Menú hamburguesa centrado y con fondo difuminado */
 @media (max-width: 768px) {
