@@ -844,7 +844,7 @@ section {
 }
 /* ✅ Espaciado más equilibrado entre secciones (igual en móvil y escritorio) */
 section {
-  padding: 1.5rem 1rem !important;
+  padding: 1rem 1rem !important;
   margin: 0 auto !important;
   box-sizing: border-box;
 }
