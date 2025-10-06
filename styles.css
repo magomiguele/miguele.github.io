@@ -812,3 +812,29 @@ body.menu-open::before {
     box-shadow: none !important;
   }
 }
+/* ✅ Unificar y reducir espacios entre secciones */
+section {
+  padding: 3rem 2rem !important;
+  margin: 0 auto !important;
+  box-sizing: border-box;
+}
+
+.contenido-quien-soy,
+.contenido-cita-a-ciegas,
+.contenido-no-ver {
+  margin: 0 auto !important; /* elimina huecos verticales adicionales */
+  padding: 0 !important;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 2.5rem 1.5rem !important; /* ajusta para móvil */
+  }
+
+  .contenido-quien-soy,
+  .contenido-cita-a-ciegas,
+  .contenido-no-ver {
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+}
