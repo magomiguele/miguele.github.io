@@ -66,20 +66,6 @@ section {
   color: white !important;
 }
 
-/* Botón hamburguesa */
-.menu-toggle {
-  display: none;
-  font-size: 2rem;
-  color: white;
-  background: none;
-  border: none;
-  cursor: pointer;
-  position: absolute;
-  right: 20px;
-  top: 15px;
-  z-index: 1100;
-}
-
 /* ---------------------------
    Hero (Inicio)
 --------------------------- */
@@ -624,21 +610,6 @@ img {
     display: block !important;
   }
 }
-/* --- Ajustes menú hamburguesa --- */
-/* ======== MENÚ HAMBURGUESA ======== */
-
-.menu-toggle {
-  display: none;
-  font-size: 2rem;
-  color: white;
-  background: none;
-  border: none;
-  cursor: pointer;
-  position: fixed;
-  top: 20px;
-  right: 25px; /* <-- separa el botón del borde */
-  z-index: 2000;
-}
 
 /* Estilos para móviles */
 
@@ -655,62 +626,7 @@ img {
   max-height: 600px;
   object-fit: cover;
 }
-/* Ocultar barra difuminada en móviles */
-@media (max-width: 768px) {
-  .navbar {
-    background: none !important; /* Quita el fondo difuminado */
-    backdrop-filter: none !important; /* Desactiva el difuminado */
-    box-shadow: none !important; /* Por si tenía sombreado */
-  }
 
-  /* Aseguramos que el botón hamburguesa siga visible */
-  .navbar .menu-toggle {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    z-index: 9999;
-  }
-
-  /* Ocultamos cualquier borde o marco */
-  .navbar::before {
-    display: none !important;
-  }
-}
-/* 🔹 Estilo del header en móviles (sin difuminado por defecto) */
-@media (max-width: 768px) {
-  .navbar {
-    background: none !important;
-    backdrop-filter: none !important;
-    box-shadow: none !important;
-  }
-
-  .navbar .menu-toggle {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    z-index: 9999;
-  }
-
-  /* 🔹 Cuando el menú está abierto, se difumina el fondo */
-  body.menu-open .navbar {
-    background: rgba(0, 0, 0, 0.15) !important;
-    backdrop-filter: blur(8px) !important;
-  }
-
-  /* Opcional: pequeño efecto de transición más suave */
-  .navbar {
-    transition: background 0.3s ease, backdrop-filter 0.3s ease;
-  }
-}
-section {
-  padding: 4rem 2rem; /* antes seguro estaba en torno a 6rem o más */
-}
-
-@media (max-width: 768px) {
-  section {
-    padding: 3rem 1.5rem;
-  }
-}
 /* ✅ Unificar y reducir espacios entre secciones */
 section {
   padding: 3rem 2rem !important;
@@ -757,14 +673,6 @@ html {
   scroll-padding-top: 40px;
 }
    
-/* ✅ Fijar posición del botón hamburguesa (no se mueve al abrir/cerrar) */
-.menu-toggle {
-  position: fixed !important;
-  top: 20px !important;
-  right: 25px !important;
-  z-index: 2001 !important;
-  transition: none !important;
-}
 /* ✅ Ajuste fino del scroll para que los títulos queden arriba */
 html {
   scroll-behavior: smooth;
@@ -783,9 +691,9 @@ html {
   color: white !important;
   outline: none !important;
 }
-/* ======= MENÚ MÓVIL DEFINITIVO ======= */
+/* ======= MENÚ MÓVIL FINAL ======= */
 @media (max-width: 768px) {
-  /* Barra transparente por defecto en móvil */
+  /* Barra transparente en móvil */
   .navbar {
     background: none !important;
     backdrop-filter: none !important;
@@ -793,18 +701,18 @@ html {
     z-index: 1000;
   }
 
-  /* Menú oculto por defecto */
+  /* Menú oculto */
   .navbar ul {
     position: fixed;
     inset: 0;
     display: none;
-    justify-content: center; /* centra verticalmente */
-    align-items: center;     /* centra horizontalmente */
+    flex-direction: column;
+    justify-content: center;   /* centra vertical */
+    align-items: flex-start;   /* alinea texto a la izquierda */
+    padding-left: 2rem;        /* separa un poco del borde */
     margin: 0;
-    padding: 0;
     z-index: 1300;
     background: transparent;
-    box-sizing: border-box;
   }
 
   /* Overlay difuminado */
@@ -812,36 +720,32 @@ html {
     content: "";
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.32);   
+    background: rgba(0,0,0,0.3);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    z-index: 1250; /* debajo del menú */
+    z-index: 1250;
   }
 
   /* Menú visible */
   .navbar ul.show {
     display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-    align-items: center;
-    justify-content: center;
+    gap: 1rem;
   }
 
   /* Ítems dentro del menú */
   .navbar ul.show > li {
     list-style: none;
-    width: min(640px, 92%);
+    width: 100%;
+    max-width: 300px;
   }
 
   .navbar ul.show > li > a {
     display: block;
-    width: 100%;
-    padding: .35rem 0;
-    text-align: left;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-family: "TimesNewRomanExtraBold", serif;
     color: white;
     text-decoration: none;
+    padding: .3rem 0;
   }
 
   /* Botón hamburguesa */
@@ -858,11 +762,11 @@ html {
     cursor: pointer;
   }
 
-  /* Asegurar que la navbar no reaparece sobre el overlay */
+  /* Evitar que la barra se vea al abrir menú */
   body.menu-open .navbar {
-    background: transparent !important;
+    background: none !important;
     backdrop-filter: none !important;
     box-shadow: none !important;
   }
 }
-/* ======= FIN MENÚ MÓVIL ======= */
+/* ======= FIN MENÚ MÓVIL FINAL ======= */
