@@ -955,3 +955,11 @@ html {
     z-index: 1000;
   }
 }
+/* ✅ Fijar posición del botón hamburguesa (no se mueve al abrir/cerrar) */
+.menu-toggle {
+  position: fixed !important;
+  top: 20px !important;
+  right: 25px !important;
+  z-index: 2001 !important;
+  transition: none !important;
+}
