@@ -23,41 +23,43 @@ section {
 
 /* ======== MENÚ ESCRITORIO DIFUMINADO ======== */
 
+/* ✅ Barra de navegación fija restaurada y bien posicionada */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   display: flex;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.25); /* leve oscurecimiento */
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 2rem;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.3); /* leve difuminado */
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  box-shadow: none;
-  transition: background 0.3s ease;
-}
-  padding: 1rem 0;
-  z-index: 2000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
 }
 
-.navbar ul {
+.navbar img {
+  height: 50px;
+}
+
+.nav-links {
   display: flex;
   gap: 2rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  align-items: center;
 }
 
-.navbar a {
-  text-decoration: none;
+.nav-links a {
   color: white;
-  font-family: 'TimesNewRomanExtraBold', serif;
-  font-size: 1.1rem;
-  transition: color 0.3s;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
 }
 
-.navbar a:hover {
-  color: #cccccc;
+.nav-links a:hover {
+  color: #f5b400;
 }
 
 /* Botón hamburguesa */
