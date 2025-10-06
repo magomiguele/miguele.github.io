@@ -737,3 +737,29 @@ img {
     display: none !important;
   }
 }
+/* 🔹 Estilo del header en móviles (sin difuminado por defecto) */
+@media (max-width: 768px) {
+  .navbar {
+    background: none !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+  }
+
+  .navbar .menu-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 9999;
+  }
+
+  /* 🔹 Cuando el menú está abierto, se difumina el fondo */
+  body.menu-open .navbar {
+    background: rgba(0, 0, 0, 0.3) !important;
+    backdrop-filter: blur(8px) !important;
+  }
+
+  /* Opcional: pequeño efecto de transición más suave */
+  .navbar {
+    transition: background 0.3s ease, backdrop-filter 0.3s ease;
+  }
+}
