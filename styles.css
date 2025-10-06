@@ -964,3 +964,14 @@ html {
   z-index: 2001 !important;
   transition: none !important;
 }
+/* ✅ Ajuste fino del scroll para que los títulos queden arriba */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* antes 40px */
+}
+
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 70px; /* un poco menos en móvil */
+  }
+}
