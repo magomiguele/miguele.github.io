@@ -168,53 +168,39 @@
       </div>
     </div>
   </section>
-  <script>
-  const menuToggle = document.querySelector(".menu-toggle");
-  const navbarMenu = document.querySelector(".navbar ul");
-  const body = document.body;
-
-  // Abrir/cerrar menú al tocar la hamburguesa
-  menuToggle.addEventListener("click", () => {
-    navbarMenu.classList.toggle("show");
-    body.classList.toggle("menu-open");
-  });
-
-  // Cerrar menú al pulsar un enlace
-  document.querySelectorAll(".navbar a").forEach(link => {
-    link.addEventListener("click", () => {
-      navbarMenu.classList.remove("show");
-      body.classList.remove("menu-open");
-    });
-  });
-</script>
-  <!-- === MENÚ MÓVIL REPARADO v5 === -->
-<div id="mobile-overlay"></div>
+  <!-- ==== NUEVO MENÚ MÓVIL FUNCIONAL ==== -->
+<div id="menu-overlay"></div>
 
 <script>
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.querySelector(".menu-toggle");
   const menu = document.querySelector(".navbar ul");
-  const overlay = document.getElementById("mobile-overlay");
+  const overlay = document.getElementById("menu-overlay");
 
-  function toggleMenu() {
-    const isOpen = menu.classList.toggle("menu-open");
-    overlay.classList.toggle("visible", isOpen);
-    document.body.classList.toggle("no-scroll", isOpen);
+  function openMenu() {
+    menu.classList.add("open");
+    overlay.classList.add("active");
+    document.body.style.overflow = "hidden";
   }
 
-  // abrir/cerrar con hamburguesa
-  toggle.addEventListener("click", toggleMenu);
+  function closeMenu() {
+    menu.classList.remove("open");
+    overlay.classList.remove("active");
+    document.body.style.overflow = "";
+  }
 
-  // cerrar tocando fuera del menú
-  overlay.addEventListener("click", toggleMenu);
+  toggle.addEventListener("click", () => {
+    if (menu.classList.contains("open")) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
 
-  // cerrar al hacer clic en un enlace del menú
-  document.querySelectorAll(".navbar ul li a").forEach(link => {
-    link.addEventListener("click", () => {
-      menu.classList.remove("menu-open");
-      overlay.classList.remove("visible");
-      document.body.classList.remove("no-scroll");
-    });
+  overlay.addEventListener("click", closeMenu);
+
+  document.querySelectorAll(".navbar a").forEach(link => {
+    link.addEventListener("click", closeMenu);
   });
 });
 </script>
