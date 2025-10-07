@@ -1255,3 +1255,46 @@ body.menu-open .navbar {
     z-index: 10010 !important; /* 👈 el botón siempre visible */
   }
 }
+/* ====== FIX DEFINITIVO MENÚ MÓVIL (visibilidad + centrado) ====== */
+@media (max-width: 768px) {
+  /* Asegurar overlay correcto */
+  body.menu-open::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 9000 !important; /* 👈 capa inferior */
+  }
+
+  /* Mostrar menú por encima del overlay */
+  .navbar ul.show {
+    position: fixed !important;
+    inset: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;   /* centrado vertical */
+    align-items: flex-start !important;    /* texto alineado a la izquierda */
+    padding-left: 2rem !important;
+    gap: 1.3rem !important;
+    background: none !important;           /* sin fondo adicional */
+    z-index: 9500 !important;              /* 👈 capa superior al difuminado */
+  }
+
+  /* Estilo de los enlaces */
+  .navbar ul.show li a {
+    font-size: 2rem !important;
+    font-family: "TimesNewRomanExtraBold", serif !important;
+    color: white !important;
+    text-decoration: none !important;
+  }
+
+  /* Botón hamburguesa visible encima de todo */
+  .menu-toggle {
+    position: fixed !important;
+    top: 18px !important;
+    right: 18px !important;
+    z-index: 10000 !important;
+  }
+}
