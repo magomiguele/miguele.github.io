@@ -1298,3 +1298,51 @@ body.menu-open .navbar {
     z-index: 10000 !important;
   }
 }
+/* ====== FIX FINAL: Menú móvil visible sobre difuminado ====== */
+@media (max-width: 768px) {
+  /* Crear un contexto nuevo para controlar las capas */
+  .navbar {
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  /* Overlay difuminado: capa baja */
+  body.menu-open::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 9000 !important; /* 👈 capa inferior */
+  }
+
+  /* Menú visible centrado sobre el difuminado */
+  .navbar ul.show {
+    position: fixed !important;
+    inset: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;   /* centrado vertical */
+    align-items: flex-start !important;    /* texto a la izquierda */
+    padding-left: 2rem !important;
+    gap: 1.3rem !important;
+    background: none !important;
+    z-index: 9999 !important;              /* 👈 más alto que el difuminado */
+  }
+
+  .navbar ul.show li a {
+    font-size: 2rem !important;
+    font-family: "TimesNewRomanExtraBold", serif !important;
+    color: white !important;
+    text-decoration: none !important;
+  }
+
+  /* Botón hamburguesa en capa superior */
+  .menu-toggle {
+    position: fixed !important;
+    top: 18px !important;
+    right: 18px !important;
+    z-index: 10000 !important;
+  }
+}
