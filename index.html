@@ -280,6 +280,47 @@
 })();
 </script>
 </script>
+
+<style>
+/* === REPARACIÓN DEFINITIVA MENÚ MÓVIL === */
+#mobile-overlay {
+  z-index: 998 !important; /* Capa de difuminado por debajo */
+}
+
+.navbar ul.mobile-visible {
+  z-index: 9999 !important; /* Menú por encima del difuminado */
+  background: transparent !important;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 12%;
+  gap: 1.5rem;
+}
+
+.navbar ul.mobile-visible a {
+  font-size: 2rem !important;
+  color: white !important;
+  text-align: left;
+  font-family: "TimesNewRomanExtraBold", serif;
+}
+
+.menu-toggle {
+  z-index: 10000 !important; /* La hamburguesa siempre encima */
+}
+
+/* Ajuste del difuminado para hacerlo más uniforme */
+#mobile-overlay {
+  background: rgba(0, 0, 0, 0.25) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}
+</style>
+  
 </body>
 </html>
 <style>
