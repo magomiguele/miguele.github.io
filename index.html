@@ -174,37 +174,58 @@
 <div id="menu-overlay"></div>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const toggle = document.querySelector(".menu-toggle");
-  const menu = document.querySelector(".navbar ul");
-  const overlay = document.getElementById("menu-overlay");
+(function(){
+  // Crea overlay dinámicamente si no existe
+  if(!document.getElementById('menu-overlay')) {
+    const ov = document.createElement('div');
+    ov.id = 'menu-overlay';
+    ov.setAttribute('aria-hidden','true');
+    document.body.appendChild(ov);
+  }
+  const overlay = document.getElementById('menu-overlay');
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navMenu = document.querySelector('.navbar ul');
 
-  function openMenu() {
-    menu.classList.add("open");
-    overlay.classList.add("active");
-    document.body.style.overflow = "hidden";
+  if(!menuToggle || !navMenu) return; // seguridad
+
+  // Normalizar estado inicial
+  document.body.classList.remove('menu-open');
+  navMenu.classList.remove('show');
+  overlay.classList.remove('show');
+
+  function openMenu(){
+    navMenu.classList.add('show');
+    overlay.classList.add('show');
+    document.body.classList.add('menu-open');
+    // evitar scroll detrás
+    document.documentElement.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu(){
+    navMenu.classList.remove('show');
+    overlay.classList.remove('show');
+    document.body.classList.remove('menu-open');
+    document.documentElement.style.overflow = '';
+    document.body.style.overflow = '';
   }
 
-  function closeMenu() {
-    menu.classList.remove("open");
-    overlay.classList.remove("active");
-    document.body.style.overflow = "";
-  }
-
-  toggle.addEventListener("click", () => {
-    if (menu.classList.contains("open")) {
-      closeMenu();
-    } else {
-      openMenu();
-    }
+  menuToggle.addEventListener('click', function(e){
+    e.preventDefault();
+    // toggle
+    if(navMenu.classList.contains('show')) closeMenu();
+    else openMenu();
   });
 
-  overlay.addEventListener("click", closeMenu);
+  // cerrar al tocar overlay
+  overlay.addEventListener('click', closeMenu);
 
-  document.querySelectorAll(".navbar a").forEach(link => {
-    link.addEventListener("click", closeMenu);
-  });
-});
+  // cerrar al pulsar cualquier enlace del menú
+  document.querySelectorAll('.navbar a').forEach(a => a.addEventListener('click', closeMenu));
+
+  // evita que el overlay capture eventos de scroll/tap innecesarios
+  overlay.addEventListener('touchmove', function(e){ e.preventDefault(); }, { passive:false });
+
+})();
 </script>
 </body>
 </html>
