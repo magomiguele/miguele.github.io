@@ -1346,3 +1346,70 @@ body.menu-open .navbar {
     z-index: 10000 !important;
   }
 }
+/* === FIX MENU MÓVIL: overlay real + stacking clean (pegar AL FINAL) === */
+#menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.32);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 9990;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .22s ease, visibility .22s ease;
+}
+#menu-overlay.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Forzamos menú (ul) encima del overlay en móvil */
+@media (max-width: 768px) {
+  /* oculto por defecto (seguirán existiendo reglas previas, esto las sobreescribe solo en móvil) */
+  .navbar ul { display: none !important; }
+
+  /* menú visible: centrado verticalmente, texto alineado a la izquierda */
+  .navbar ul.show {
+    display: flex !important;
+    position: fixed !important;
+    inset: 0 !important;               /* ocupa toda la pantalla para centrar su contenido */
+    justify-content: center !important;/* centra verticalmente el panel */
+    align-items: center !important;    /* centra horizontalmente el panel */
+    flex-direction: column !important;
+    gap: 0.6rem !important;
+    background: transparent !important;/* sin marco oscuro propio */
+    padding: 0 !important;
+    margin: 0 !important;
+    z-index: 9999 !important;          /* por encima del overlay (9990) */
+    box-sizing: border-box !important;
+  }
+
+  /* panel interior: limitamos el ancho del bloque que contiene los links,
+     el texto del enlace queda alineado a la izquierda dentro de ese bloque */
+  .navbar ul.show > li {
+    list-style: none;
+    width: min(640px, 92%);
+    box-sizing: border-box;
+  }
+
+  .navbar ul.show > li > a {
+    display: block;
+    width: 100%;
+    padding: .4rem 0;
+    text-align: left;
+    font-size: 1.8rem;
+    font-family: "TimesNewRomanExtraBold", serif;
+    color: white;
+    text-decoration: none;
+  }
+
+  /* overlay bajo el menú (ya definido arriba) y botón por encima */
+  .menu-toggle { z-index: 10000 !important; position: fixed !important; top: 18px !important; right: 18px !important; }
+}
+
+/* Por seguridad: en escritorio no mostramos el overlay ni el botón hamburguesa globalmente */
+@media (min-width: 769px) {
+  #menu-overlay { display: none !important; }
+}
