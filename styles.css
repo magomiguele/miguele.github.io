@@ -1108,3 +1108,70 @@ body.menu-open .navbar {
     box-shadow: none !important;
   }
 }
+/* === MENÚ MÓVIL REPARADO v5 === */
+@media (max-width: 768px) {
+  .menu-toggle {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    font-size: 2rem !important;
+    color: white !important;
+    background: none !important;
+    border: none !important;
+    z-index: 10002 !important;
+  }
+
+  #mobile-overlay {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 10000;
+  }
+
+  #mobile-overlay.visible {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .navbar ul {
+    display: none !important;
+  }
+
+  .navbar ul.menu-open {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    gap: 1.2rem !important;
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: 12px;
+    padding: 2rem;
+    width: 80%;
+    max-width: 320px;
+    z-index: 10001;
+  }
+
+  .navbar ul.menu-open li a {
+    color: white !important;
+    text-decoration: none !important;
+    font-size: 1.6rem !important;
+    font-family: "TimesNewRomanExtraBold", serif !important;
+    text-align: left !important;
+  }
+
+  body.no-scroll {
+    overflow: hidden !important;
+  }
+}
