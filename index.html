@@ -187,5 +187,36 @@
     });
   });
 </script>
+  <!-- === MENÚ MÓVIL REPARADO v5 === -->
+<div id="mobile-overlay"></div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const toggle = document.querySelector(".menu-toggle");
+  const menu = document.querySelector(".navbar ul");
+  const overlay = document.getElementById("mobile-overlay");
+
+  function toggleMenu() {
+    const isOpen = menu.classList.toggle("menu-open");
+    overlay.classList.toggle("visible", isOpen);
+    document.body.classList.toggle("no-scroll", isOpen);
+  }
+
+  // abrir/cerrar con hamburguesa
+  toggle.addEventListener("click", toggleMenu);
+
+  // cerrar tocando fuera del menú
+  overlay.addEventListener("click", toggleMenu);
+
+  // cerrar al hacer clic en un enlace del menú
+  document.querySelectorAll(".navbar ul li a").forEach(link => {
+    link.addEventListener("click", () => {
+      menu.classList.remove("menu-open");
+      overlay.classList.remove("visible");
+      document.body.classList.remove("no-scroll");
+    });
+  });
+});
+</script>
 </body>
 </html>
