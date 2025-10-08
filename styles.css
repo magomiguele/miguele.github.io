@@ -665,24 +665,22 @@ img {
 /* Estilos para móviles */
 @media (max-width: 768px) {
   .navbar ul {
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: 75%;
-    max-width: 300px;
-    background: rgba(0, 0, 0, 0.85); /* semitransparente */
-    backdrop-filter: blur(10px);
-    list-style: none;
-    padding: 5rem 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2rem;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    z-index: 1500;
-  }
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 70%;
+  max-width: 300px;
+  background: transparent; /* ← Sin fondo negro */
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1001;
+}
 
   .navbar ul.show {
     transform: translateX(0);
