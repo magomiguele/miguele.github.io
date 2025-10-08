@@ -168,209 +168,24 @@
       </div>
     </div>
   </section>
-  <!-- ==== NUEVO MENÚ MÓVIL FUNCIONAL ==== -->
-<div id="menu-overlay"></div>
-<!-- ==== NUEVO MENÚ MÓVIL FUNCIONAL ==== -->
-<div id="menu-overlay"></div>
-<style>
-/* ======= MENÚ MÓVIL DEFINITIVO LIMPIO ======= */
-#menu-overlay-fixed,
-#menu-overlay {
-  display: none !important;
-}
+  <script>
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navbarMenu = document.querySelector(".navbar ul");
+  const body = document.body;
 
-#mobile-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-  z-index: 998;
-}
-
-.navbar ul {
-  transition: all 0.3s ease;
-}
-
-.navbar ul.mobile-visible {
-  display: flex !important;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding-left: 12%;
-  gap: 1rem;
-  margin: 0;
-  background: transparent;
-  z-index: 999;
-}
-
-.navbar ul.mobile-visible li {
-  list-style: none;
-}
-
-.navbar ul.mobile-visible a {
-  font-size: 1.8rem;
-  color: white;
-  text-decoration: none;
-  font-family: "TimesNewRomanExtraBold", serif;
-}
-
-.menu-toggle {
-  z-index: 1000 !important;
-  position: fixed !important;
-  top: 18px !important;
-  right: 18px !important;
-}
-
-@media (min-width: 769px) {
-  #mobile-overlay { display: none !important; }
-}
-</style>
-
-<script>
-(function() {
-  // Crear overlay único
-  let overlay = document.getElementById("mobile-overlay");
-  if (!overlay) {
-    overlay = document.createElement("div");
-    overlay.id = "mobile-overlay";
-    document.body.appendChild(overlay);
-  }
-
-  const burger = document.querySelector(".menu-toggle");
-  const navList = document.querySelector(".navbar ul");
-
-  if (!burger || !navList) return;
-
-  function openMenu() {
-    navList.classList.add("mobile-visible");
-    overlay.style.opacity = "1";
-    overlay.style.visibility = "visible";
-    overlay.style.pointerEvents = "auto";
-    document.body.style.overflow = "hidden";
-  }
-
-  function closeMenu() {
-    navList.classList.remove("mobile-visible");
-    overlay.style.opacity = "0";
-    overlay.style.visibility = "hidden";
-    overlay.style.pointerEvents = "none";
-    document.body.style.overflow = "";
-  }
-
-  burger.addEventListener("click", function() {
-    const open = navList.classList.contains("mobile-visible");
-    if (open) closeMenu();
-    else openMenu();
+  // Abrir/cerrar menú al tocar la hamburguesa
+  menuToggle.addEventListener("click", () => {
+    navbarMenu.classList.toggle("show");
+    body.classList.toggle("menu-open");
   });
 
-  overlay.addEventListener("click", closeMenu);
+  // Cerrar menú al pulsar un enlace
   document.querySelectorAll(".navbar a").forEach(link => {
-    link.addEventListener("click", closeMenu);
+    link.addEventListener("click", () => {
+      navbarMenu.classList.remove("show");
+      body.classList.remove("menu-open");
+    });
   });
-})();
 </script>
-</script>
-
-<style>
-/* === REPARACIÓN DEFINITIVA MENÚ MÓVIL === */
-#mobile-overlay {
-  z-index: 998 !important; /* Capa de difuminado por debajo */
-}
-
-.navbar ul.mobile-visible {
-  z-index: 9999 !important; /* Menú por encima del difuminado */
-  background: transparent !important;
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding-left: 12%;
-  gap: 1.5rem;
-}
-
-.navbar ul.mobile-visible a {
-  font-size: 2rem !important;
-  color: white !important;
-  text-align: left;
-  font-family: "TimesNewRomanExtraBold", serif;
-}
-
-.menu-toggle {
-  z-index: 10000 !important; /* La hamburguesa siempre encima */
-}
-
-/* Ajuste del difuminado para hacerlo más uniforme */
-#mobile-overlay {
-  background: rgba(0, 0, 0, 0.25) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-}
-</style>
-  <style>
-/* === PARCHE SEGURO Y SIMPLE PARA EL MENÚ MÓVIL === */
-
-/* Capa de difuminado: debajo del menú */
-#mobile-overlay {
-  position: fixed !important;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.25) !important;
-  backdrop-filter: blur(10px) !important;
-  -webkit-backdrop-filter: blur(10px) !important;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-  z-index: 100; /* por debajo del menú */
-}
-
-/* Menú visible en móviles: por encima del difuminado */
-.navbar ul.mobile-visible {
-  display: flex !important;
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding-left: 12%;
-  gap: 1.5rem;
-  margin: 0;
-  background: transparent !important;
-  z-index: 200; /* por encima del overlay */
-}
-
-/* Enlaces del menú */
-.navbar ul.mobile-visible a {
-  font-size: 1.8rem !important;
-  color: white !important;
-  text-decoration: none;
-  font-family: "TimesNewRomanExtraBold", serif;
-}
-
-/* Botón hamburguesa: siempre arriba */
-.menu-toggle {
-  z-index: 300 !important;
-  position: fixed !important;
-  top: 18px !important;
-  right: 18px !important;
-}
-</style>
 </body>
 </html>
-<style>
