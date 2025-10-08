@@ -170,20 +170,19 @@
   </section>
   <script>
   const menuToggle = document.querySelector(".menu-toggle");
-  const navbarMenu = document.querySelector(".navbar ul");
-  const body = document.body;
+  const navMenu = document.querySelector(".navbar ul");
 
-  // Abrir/cerrar menú al tocar la hamburguesa
+  // abrir/cerrar el menú
   menuToggle.addEventListener("click", () => {
-    navbarMenu.classList.toggle("show");
-    body.classList.toggle("menu-open");
+    navMenu.classList.toggle("show");
+    document.body.classList.toggle("menu-open");
   });
 
-  // Cerrar menú al pulsar un enlace
+  // cerrar menú al pulsar cualquier enlace
   document.querySelectorAll(".navbar a").forEach(link => {
     link.addEventListener("click", () => {
-      navbarMenu.classList.remove("show");
-      body.classList.remove("menu-open");
+      navMenu.classList.remove("show");
+      document.body.classList.remove("menu-open");
     });
   });
 </script>
