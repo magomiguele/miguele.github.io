@@ -1,231 +1,225 @@
-/* =========================
-   ESTILOS GENERALES
-========================= */
-@font-face {
-  font-family: 'TimesNewRomanExtraBold';
-  src: url('TimesNewRoman_ExtraBold.ttf') format('truetype');
-}
-
+/* ---------------------------
+   Estilos globales
+--------------------------- */
 body {
   margin: 0;
-  padding: 0;
   background-color: black;
   color: white;
-  font-family: 'Times New Roman', serif;
-  overflow-x: hidden;
+  font-family: "Times New Roman", serif;
+  line-height: 1.6;
 }
 
-h2 {
-  font-family: 'TimesNewRomanExtraBold', 'Times New Roman', serif;
-  font-size: 2.2rem;
-  margin-bottom: 1rem;
+@font-face {
+  font-family: "TimesNewRomanExtraBold";
+  src: url("TimesNewRoman_ExtraBold.ttf") format("truetype");
+  font-weight: 800;
 }
 
-/* =========================
-   NAVBAR
-========================= */
+section {
+  scroll-margin-top: 100px;
+  padding: 3rem 2rem;
+  box-sizing: border-box;
+}
+
+/* ======== MENÚ ESCRITORIO DIFUMINADO ======== */
+
 .navbar {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
   display: flex;
   justify-content: center;
+  background: rgba(0, 0, 0, 0.6); /* Semitransparente */
+  backdrop-filter: blur(10px); /* Efecto de difuminado */
   padding: 1rem 0;
-  z-index: 1000;
+  z-index: 2000;
 }
 
 .navbar ul {
-  list-style: none;
   display: flex;
   gap: 2rem;
+  list-style: none;
   margin: 0;
   padding: 0;
 }
 
 .navbar a {
-  color: white;
   text-decoration: none;
+  color: white;
   font-family: 'TimesNewRomanExtraBold', serif;
   font-size: 1.1rem;
-  transition: color 0.2s ease;
+  transition: color 0.3s;
 }
 
 .navbar a:hover {
-  color: #ccc;
+  color: #cccccc;
 }
 
-/* ======= MENÚ MÓVIL ======= */
+/* Botón hamburguesa */
 .menu-toggle {
   display: none;
-  background: none;
-  border: none;
   font-size: 2rem;
   color: white;
+  background: none;
+  border: none;
   cursor: pointer;
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  z-index: 1001;
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  z-index: 1100;
 }
 
-/* Overlay para móvil */
-#mobile-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-  z-index: 999;
-}
-
-.navbar ul.mobile-visible {
-  display: flex !important;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding-left: 15%;
-  gap: 1.5rem;
-  background: transparent;
-  z-index: 1000;
-}
-
-/* =========================
-   SECCIONES PRINCIPALES
-========================= */
-section {
-  padding: 6rem 2rem;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* ===== Hero ===== */
+/* ---------------------------
+   Hero (Inicio)
+--------------------------- */
 .hero {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 85vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
   gap: 2rem;
-  padding-top: 8rem;
 }
 
-.hero .left,
-.hero .right {
+.hero .left {
   flex: 1;
-  min-width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.logo {
-  max-width: 250px;
-}
-
-.laureles {
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
   gap: 1rem;
 }
 
-.laureles img {
-  max-width: 200px;
+.logo {
+  max-width: 65%;
+}
+
+.laureles {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.laurel {
+  max-width: 100px;
+}
+
+.hero .right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .foto {
+  max-width: 340px;
   width: 100%;
-  max-width: 500px;
-  height: auto;
-  border-radius: 10px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
 }
 
-/* ===== Quién soy ===== */
-.contenido-quien-soy {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4rem;
-  flex-wrap: wrap;
-  padding-top: 6rem;
+/* ---------------------------
+   Tipografía y textos
+--------------------------- */
+h2 {
+  font-family: "TimesNewRomanExtraBold", serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
-.foto-quien-soy img {
-  width: 100%;
-  max-width: 450px;
-  border-radius: 10px;
+p {
+  font-size: 1.05em;
+  margin-bottom: 1rem;
+  line-height: 1.65;
 }
 
-.texto-quien-soy {
-  max-width: 600px;
-  text-align: justify;
-}
-
-/* ===== Cita a ciegas ===== */
-.contenido-cita-a-ciegas {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4rem;
-  flex-wrap: wrap-reverse;
-  padding-top: 6rem;
-}
-
-.foto-cita-a-ciegas img {
-  width: 100%;
-  max-width: 450px;
-  border-radius: 10px;
-}
-
-.texto-cita-a-ciegas {
-  max-width: 600px;
-  text-align: justify;
-}
-
-/* ===== No ver para creer ===== */
+/* ============================
+   SECCIONES: ¿Quién soy?, Cita a ciegas, No ver para creer
+============================ */
+.contenido-quien-soy,
+.contenido-cita-a-ciegas,
 .contenido-no-ver {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4rem;
-  flex-wrap: wrap;
-  padding-top: 6rem;
+  gap: 3rem;
+  max-width: 1100px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+  box-sizing: border-box;
 }
 
+.texto-quien-soy,
+.texto-cita-a-ciegas,
+.texto-no-ver {
+  flex: 2;
+  max-width: 650px;
+  font-size: 1.1rem;
+  line-height: 1.65;
+  text-align: left;             /* 👈 alineado a la izquierda */
+}
+
+.texto-quien-soy h2,
+.texto-cita-a-ciegas h2,
+.texto-no-ver h2 {
+  font-family: "TimesNewRomanExtraBold", serif;
+  font-size: 2rem;
+  text-align: left;
+  margin-bottom: 1.2rem;
+}
+
+.foto-quien-soy,
+.foto-cita-a-ciegas,
+.foto-no-ver {
+  flex: 1;
+  max-width: 320px;
+}
+
+.foto-quien-soy img,
+.foto-cita-a-ciegas img,
 .foto-no-ver img {
   width: 100%;
-  max-width: 450px;
-  border-radius: 10px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin: 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
-.texto-no-ver {
-  max-width: 600px;
-  text-align: justify;
-}
-
-/* ===== Contacto ===== */
+/* ---------------------------
+   Contacto
+--------------------------- */
 .contacto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  background-color: #000;
   text-align: center;
-  padding: 6rem 2rem;
 }
 
 .formulario-contacto {
+  background-color: black;
+  padding: 2rem 3rem;
   max-width: 600px;
+  width: 100%;
+  color: white;
+  font-family: 'Times New Roman', serif;
+  border: none;
+  box-shadow: none;
   margin: 0 auto;
-  text-align: left;
+  text-align: center;
+}
+
+.formulario-contacto h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-family: 'TimesNewRomanExtraBold', serif;
 }
 
 .formulario-contacto form {
@@ -234,82 +228,491 @@ section {
   gap: 1rem;
 }
 
+.formulario-contacto label {
+  font-family: 'TimesNewRomanExtraBold', serif;
+  font-size: 1.1rem;
+}
+
 .formulario-contacto input,
 .formulario-contacto textarea {
-  width: 100%;
-  padding: 0.75rem;
-  border: none;
-  border-radius: 4px;
+  padding: 1rem;
+  border: 1px solid white;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: 'Times New Roman', serif;
+  background-color: black;
+  color: white;
+}
+
+.formulario-contacto textarea {
+  resize: vertical;
+  min-height: 150px;
 }
 
 .formulario-contacto button {
-  padding: 0.75rem;
-  background: white;
-  color: black;
+  padding: 1rem;
+  font-size: 1rem;
   border: none;
+  border-radius: 5px;
+  background-color: red;
+  color: white;
   font-family: 'TimesNewRomanExtraBold', serif;
   cursor: pointer;
-  transition: 0.2s ease;
+  transition: background-color 0.3s ease;
 }
 
 .formulario-contacto button:hover {
-  background: #ccc;
+  background-color: darkred;
 }
 
+/* ---------------------------
+   Redes de contacto
+--------------------------- */
 .contact-info {
   margin-top: 2rem;
   display: flex;
-  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
-  gap: 1rem;
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 10px;
 }
 
 .contact-info a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.1rem;
+  flex: 1;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: white;
+  font-family: "TimesNewRomanExtraBold", serif;
+  font-size: 1.9rem;
 }
 
 .contact-info img {
-  width: 20px;
+  height: 1.9rem;
+  width: auto;
+  vertical-align: middle;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* Ajuste específico para icono Instagram */
+.contact-info img[alt="Instagram"] {
+  transform: translateY(2px);
+}
+
+/* ---------------------------
+   Responsive
+--------------------------- */
 @media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+  }
+
+  /* Menú móvil */
+  .navbar {
+    justify-content: flex-start;
+    padding: 15px;
+  }
+
   .navbar ul {
     display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background: black;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    padding: 20px 0;
+    margin: 0;
+  }
+
+  .navbar ul.show {
+    display: flex;
   }
 
   .menu-toggle {
     display: block;
   }
 
-  #mobile-overlay.active {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
+  .navbar a {
+    font-size: 1.5em;
   }
 
-  body.menu-open {
-    overflow: hidden;
+  /* --- versión móvil mejor optimizada para todas las secciones --- */
+@media (max-width: 768px) {
+  /* Estructura general */
+  .contenido-quien-soy,
+  .contenido-cita-a-ciegas,
+  .contenido-no-ver {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    text-align: center;
+    margin: 2.5rem auto;
+    padding: 0 1rem;         /* 👈 menos margen lateral */
+    max-width: 100%;         /* ocupa todo el ancho del móvil */
+    box-sizing: border-box;
   }
 
-  section {
-    padding: 4rem 1rem;
+  /* Títulos */
+  .texto-quien-soy h2,
+  .texto-cita-a-ciegas h2,
+  .texto-no-ver h2 {
+    order: 1;
+    text-align: center;
+    font-size: 1.7rem;       /* 👈 ligeramente más pequeño, más equilibrado */
+    margin-bottom: 1rem;
   }
 
-  h2 {
-    font-size: 1.8rem;
+  /* Fotos */
+  .foto-quien-soy,
+  .foto-cita-a-ciegas,
+  .foto-no-ver {
+    order: 2;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 380px;        /* 👈 tamaño homogéneo de imagen */
   }
 
+  .foto-quien-soy img,
+  .foto-cita-a-ciegas img,
+  .foto-no-ver img {
+    width: 90%;              /* 👈 margen suave sin apretar los bordes */
+    height: auto;
+    border-radius: 8px;
+  }
+
+  /* Texto */
+  .texto-quien-soy p,
+  .texto-cita-a-ciegas p,
+  .texto-no-ver p {
+    order: 3;
+    text-align: left;        /* 👈 alineado a la izquierda, más natural para leer */
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin: 0 auto;
+    width: 92%;              /* 👈 menos aire lateral */
+  }
+
+  /* Contacto en móvil (se mantiene el centrado previo) */
+  .contacto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+  }
+
+  .formulario-contacto {
+    margin: 0 auto;
+    text-align: center;
+    max-width: 100%;
+    width: 100%;
+    padding: 1.5rem;
+    box-sizing: border-box;
+  }
+
+  .contact-info {
+    flex-direction: column;
+    gap: 1.4rem;
+    width: 100%;
+    margin: 2rem auto 0 auto;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .contact-info a {
+    font-size: 1.4rem;
+    white-space: nowrap;
+    width: auto;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+}
+
+/* ======== FIX scroll horizontal ======== */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+/* ======== Secciones centrales en móvil ======== */
+.contenido-quien-soy,
+.contenido-cita-a-ciegas,
+.contenido-no-ver {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  max-width: 100%;
+  width: 100%;
+  padding: 0 1rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.texto-quien-soy,
+.texto-cita-a-ciegas,
+.texto-no-ver {
+  max-width: 95%;
+  margin: 0 auto;
+  text-align: center; /* centrado en móvil */
+  line-height: 1.6;
+  font-size: 1.05em;
+}
+
+.texto-quien-soy h2,
+.texto-cita-a-ciegas h2,
+.texto-no-ver h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.texto-quien-soy p,
+.texto-cita-a-ciegas p,
+.texto-no-ver p {
+  text-align: center; /* sin justificar */
+  margin: 0 auto;
+  max-width: 95%;
+}
+
+.foto-quien-soy,
+.foto-cita-a-ciegas,
+.foto-no-ver {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 380px;
+}
+
+.foto-quien-soy img,
+.foto-cita-a-ciegas img,
+.foto-no-ver img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+/* ======= OVERRIDES MÓVIL: Uniformizar "Quién soy", "Cita a ciegas" y "No ver para creer" ======= */
+@media (max-width: 768px) {
+
+  /* contenedores principales: columna, centrados y sin márgenes enormes */
+  .contenido-quien-soy,
+  .contenido-cita-a-ciegas,
+  .contenido-no-ver {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 12px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+    gap: 1rem !important;
+  }
+
+  /* títulos: centrados y tamaño uniforme */
+  .contenido-quien-soy .texto-quien-soy h2,
+  .contenido-cita-a-ciegas .texto-cita-a-ciegas h2,
+  .contenido-no-ver .texto-no-ver h2 {
+    text-align: center !important;
+    font-size: 1.8rem !important;
+    margin: 0 0 0.9rem 0 !important;
+    line-height: 1.15 !important;
+  }
+
+  /* cajas de texto: el contenedor está centrado pero el texto queda alineado a la izquierda */
   .texto-quien-soy,
   .texto-cita-a-ciegas,
   .texto-no-ver {
-    text-align: left;
+    width: 100% !important;
+    max-width: 720px !important;   /* suficiente para aprovechar la pantalla */
+    margin: 0 auto !important;     /* centra el bloque en la página */
+    text-align: left !important;   /* texto alineado a la izquierda (no justificado) */
+    line-height: 1.55 !important;
+    font-size: 1.02rem !important;
+    box-sizing: border-box !important;
   }
+
+  /* párrafos específicos: evitar justificar, garantizar separación */
+  .texto-quien-soy p,
+  .texto-cita-a-ciegas p,
+  .texto-no-ver p {
+    text-align: left !important;
+    margin: 0 0 1rem 0 !important;
+  }
+
+  /* fotos: centradas y con un ancho máximo coherente para que todas coincidan */
+  .foto-quien-soy,
+  .foto-cita-a-ciegas,
+  .foto-no-ver {
+    width: 100% !important;
+    max-width: 420px !important;     /* tamaño coherente en móvil */
+    margin: 0 auto 0.9rem auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .foto-quien-soy img,
+  .foto-cita-a-ciegas img,
+  .foto-no-ver img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    border-radius: 8px !important;
+  }
+
+  /* reducir espacios verticales grandes en secciones para aprovechar pantalla */
+  section {
+    padding-top: 48px !important;
+    padding-bottom: 36px !important;
+  }
+
+  /* arreglar casos en que otras reglas centran todo globalmente: asegurar que solo los bloques de texto queden alineados a la izquierda */
+  .texto-quien-soy *,
+  .texto-cita-a-ciegas *,
+  .texto-no-ver * {
+    text-align: inherit !important;
+  }
+}
+/* ======== FIX FINAL: Igualar "No ver para creer" con el resto en móvil ======== */
+@media (max-width: 768px) {
+  .contenido-no-ver {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 12px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+    gap: 1rem !important;
+  }
+
+  .texto-no-ver {
+    width: 100% !important;
+    max-width: 720px !important;
+    margin: 0 auto !important;
+    text-align: left !important;
+    line-height: 1.55 !important;
+    font-size: 1.02rem !important;
+  }
+
+  .texto-no-ver h2 {
+    text-align: center !important;
+    font-size: 1.8rem !important;
+    margin-bottom: 0.9rem !important;
+    line-height: 1.15 !important;
+  }
+
+  .texto-no-ver p {
+    text-align: left !important;
+    margin: 0 0 1rem 0 !important;
+  }
+
+  .foto-no-ver {
+    width: 100% !important;
+    max-width: 420px !important;
+    margin: 0 auto 0.9rem auto !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  .foto-no-ver img {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 8px !important;
+    display: block !important;
+  }
+}
+/* --- Ajustes menú hamburguesa --- */
+/* ======== MENÚ HAMBURGUESA ======== */
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  right: 25px; /* <-- separa el botón del borde */
+  z-index: 2000;
+}
+
+/* Estilos para móviles */
+@media (max-width: 768px) {
+  .navbar ul {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 75%;
+    max-width: 300px;
+    background: rgba(0, 0, 0, 0.85); /* semitransparente */
+    backdrop-filter: blur(10px);
+    list-style: none;
+    padding: 5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1500;
+  }
+
+  .navbar ul.show {
+    transform: translateX(0);
+  }
+
+  body.menu-open::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+.contenido-quien-soy,
+.contenido-cita-a-ciegas,
+.contenido-no-ver {
+  display: flex;
+  align-items: center; /* centra verticalmente ambos bloques */
+}
+.foto-quien-soy img,
+.foto-cita-a-ciegas img,
+.foto-no-ver img {
+  max-height: 600px;
+  object-fit: cover;
 }
