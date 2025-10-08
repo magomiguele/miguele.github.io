@@ -778,3 +778,61 @@ body.menu-open::before {
   background: rgba(0, 0, 0, 0.3);
   z-index: 999;
 }
+
+/* ======== MENÚ HAMBURGUESA ======== */
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  right: 25px; /* <-- separa el botón del borde */
+  z-index: 2000;
+}
+
+/* Estilos para móviles */
+@media (max-width: 768px) {
+  .navbar ul {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 75%;
+    max-width: 300px;
+    background: rgba(0, 0, 0, 0.85); /* semitransparente */
+    backdrop-filter: blur(10px);
+    list-style: none;
+    padding: 5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1500;
+  }
+
+  .navbar ul.show {
+    transform: translateX(0);
+  }
+
+  body.menu-open::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
