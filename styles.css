@@ -774,3 +774,76 @@ img {
     z-index: 2003;
   }
 }
+
+/* =========================================================
+   AJUSTES FINALES MENÚ MÓVIL
+   - Sin difuminado en barra fija
+   - Fondo difuminado completo al desplegar
+   - Menú centrado horizontalmente, sin marco
+   - Botón hamburguesa bien posicionado
+========================================================= */
+
+@media (max-width: 768px) {
+
+  /* Quitar fondo difuminado de la barra en móvil */
+  .navbar {
+    background: none !important;
+    backdrop-filter: none !important;
+    position: absolute !important;
+  }
+
+  /* Menú: centrado horizontalmente, sin marco difuminado */
+  .navbar ul {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(0);
+    height: 100vh;
+    width: 70%;
+    max-width: 300px;
+    background: rgba(0, 0, 0, 0.85); /* Fondo uniforme y elegante */
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.6rem;
+    padding: 0;
+    margin: 0;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1002;
+  }
+
+  /* Mostrar el menú al abrir */
+  .navbar ul.show {
+    transform: translateX(-50%);
+  }
+
+  /* Fondo difuminado suave que cubre toda la pantalla */
+  body.menu-open::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(6px);
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 1001;
+  }
+
+  /* Botón hamburguesa */
+  .menu-toggle {
+    display: block;
+    position: fixed;
+    top: 22px;
+    right: 25px;
+    font-size: 2rem;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 2003;
+  }
+}
