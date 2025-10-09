@@ -917,3 +917,75 @@ img {
     z-index: 2003;
   }
 }
+
+/* =========================================================
+   MENÚ MÓVIL - DIFUMINADO TOTAL HOMOGÉNEO (FULL SCREEN)
+========================================================= */
+
+@media (max-width: 768px) {
+
+  /* Oculta la barra fija al abrir el menú */
+  .navbar {
+    background: none !important;
+    backdrop-filter: none !important;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  /* Fondo difuminado global cubriendo toda la pantalla */
+  body.menu-open::before {
+    content: "";
+    position: fixed;
+    inset: 0; /* equivale a top:0; right:0; bottom:0; left:0 */
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(6px);
+    background: rgba(0, 0, 0, 0.35); /* mismo difuminado flojito */
+    z-index: 1001;
+  }
+
+  /* Bloque de menú centrado y sin fondo propio */
+  .navbar ul {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100vh;
+    width: 100vw;
+    background: transparent !important;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* alineado a la izquierda */
+    gap: 1.8rem;
+    padding-left: 12vw; /* margen lateral agradable */
+    margin: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1002;
+  }
+
+  .navbar ul.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Botón hamburguesa */
+  .menu-toggle {
+    display: block;
+    position: fixed;
+    top: 22px;
+    right: 25px;
+    font-size: 2rem;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 2003;
+  }
+}
