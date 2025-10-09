@@ -847,3 +847,73 @@ img {
     z-index: 2003;
   }
 }
+
+/* =========================================================
+   AJUSTES FINALES MENÚ MÓVIL - DIFUMINADO TOTAL UNIFICADO
+========================================================= */
+
+@media (max-width: 768px) {
+
+  /* Quitar completamente la barra fija en móvil */
+  .navbar {
+    background: none !important;
+    backdrop-filter: none !important;
+    position: absolute !important;
+  }
+
+  /* Menú sin fondo propio, texto flotando sobre el difuminado */
+  .navbar ul {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100vh;
+    width: 100vw;
+    background: transparent !important; /* 👈 sin fondo negro */
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.8rem;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1002;
+  }
+
+  /* Mostrar el menú (solo el texto) */
+  .navbar ul.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Fondo difuminado total */
+  body.menu-open::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(6px);
+    background: rgba(0, 0, 0, 0.35); /* 👈 intensidad ajustable */
+    z-index: 1001;
+  }
+
+  /* Botón hamburguesa */
+  .menu-toggle {
+    display: block;
+    position: fixed;
+    top: 22px;
+    right: 25px;
+    font-size: 2rem;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 2003;
+  }
+}
