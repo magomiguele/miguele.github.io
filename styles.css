@@ -714,3 +714,63 @@ img {
   max-height: 600px;
   object-fit: cover;
 }
+/* === Ajustes menú móvil con fondo difuminado completo === */
+@media (max-width: 768px) {
+
+  /* Ocultar la barra fija difuminada del escritorio */
+  .navbar {
+    background: none !important;
+    backdrop-filter: none !important;
+    position: absolute !important;
+  }
+
+  /* Menú lateral desplegable */
+  .navbar ul {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;          /* ocupa toda la altura del móvil */
+    width: 70%;
+    max-width: 300px;
+    background: rgba(0, 0, 0, 0.85); /* fondo interno del menú */
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1002;
+  }
+
+  .navbar ul.show {
+    transform: translateX(0);
+  }
+
+  /* Fondo difuminado suave que cubre toda la pantalla */
+  body.menu-open::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(6px);         /* difuminado suave */
+    background: rgba(0, 0, 0, 0.35);    /* oscuridad leve */
+    z-index: 1001;
+  }
+
+  /* Botón hamburguesa */
+  .menu-toggle {
+    display: block;
+    position: fixed;
+    top: 22px;         /* ligeramente más bajo */
+    right: 25px;       /* más separado del borde */
+    font-size: 2rem;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 2003;
+  }
+}
