@@ -973,38 +973,3 @@ img, video {
   max-width: 100vw;
   overflow-x: hidden;
 }
-
-/* =========================================================
-   DIFUMINADO SUAVE TOTAL CUANDO EL MENÚ MÓVIL ESTÁ DESPLEGADO
-   (cubre toda la pantalla, incluida la barra fija)
-========================================================= */
-@media (max-width: 768px) {
-  body.menu-open::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100vw;
-    height: 100vh;
-    backdrop-filter: blur(6px);   /* difuminado flojito */
-    background: rgba(0, 0, 0, 0.35); /* leve oscurecimiento */
-    z-index: 1000;
-    pointer-events: none; /* no bloquea clics */
-  }
-
-  /* Aseguramos que el menú esté por encima del difuminado */
-  .navbar ul {
-    position: fixed;
-    z-index: 1001; /* por encima del fondo */
-  }
-
-  /* Ocultamos la barra fija debajo del difuminado */
-  .navbar {
-    background: none !important;
-    backdrop-filter: none !important;
-    position: absolute !important;
-    z-index: 999; /* debajo del overlay */
-  }
-}
