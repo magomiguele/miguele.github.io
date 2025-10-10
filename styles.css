@@ -966,22 +966,3 @@ img, video {
   max-width: 100vw;
   overflow-x: hidden;
 }
-
-/* ===========================================
-   Fondo difuminado completo en móviles
-   (cubre toda la pantalla al abrir el menú)
-=========================================== */
-@media (max-width: 768px) {
-  body.menu-open::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    width: 100vw;
-    height: 100dvh; /* altura real visible incluso en móviles modernos */
-    background: rgba(0, 0, 0, 0.35); /* difuminado flojito */
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    z-index: 1000;
-    pointer-events: auto;
-  }
-}
