@@ -967,47 +967,6 @@ img, video {
   overflow-x: hidden;
 }
 
-/* ==========================================
-   DIFUMINADO COMPLETO (INCLUYE ZONA DE BARRA FIJA)
-========================================== */
-@media (max-width: 768px) {
-  body.menu-open::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.3); /* mismo tono flojito */
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    z-index: 999;
-    pointer-events: none; /* evita interferir con clics del menú */
-  }
-
-  /* Menú centrado, encima del difuminado */
-  .navbar ul.show {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: transparent;
-    z-index: 1000;
-  }
-
-  /* Botón hamburguesa visible y sobre todo */
-  .menu-toggle {
-    position: fixed;
-    top: 20px;
-    right: 25px;
-    z-index: 1100;
-  }
-
   /* Oculta la barra fija detrás del difuminado */
   .navbar {
     background: transparent !important;
