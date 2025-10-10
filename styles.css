@@ -966,10 +966,3 @@ img, video {
   max-width: 100vw;
   overflow-x: hidden;
 }
-
-  /* Oculta la barra fija detrás del difuminado */
-  .navbar {
-    background: transparent !important;
-    backdrop-filter: none !important;
-  }
-}
