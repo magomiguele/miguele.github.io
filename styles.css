@@ -56,6 +56,13 @@ section {
   color: #cccccc;
 }
 
+/* Evitar que los enlaces cambien de color al hacer clic o quedar activos */
+.navbar a:focus,
+.navbar a:active,
+.navbar a:visited {
+  color: white !important;
+}
+
 /* Botón hamburguesa */
 .menu-toggle {
   display: none;
