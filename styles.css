@@ -973,3 +973,23 @@ img, video {
   max-width: 100vw;
   overflow-x: hidden;
 }
+
+/* =========================================================
+   REDUCCIÓN UNIFICADA DE ESPACIO ENTRE TODAS LAS SECCIONES
+   (aplica a escritorio y móvil)
+========================================================= */
+
+section {
+  padding-top: 3rem;     /* menos aire arriba */
+  padding-bottom: 3rem;  /* menos aire abajo */
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Para móvil: aún más compacto */
+@media (max-width: 768px) {
+  section {
+    padding-top: 2.2rem;
+    padding-bottom: 2.2rem;
+  }
+}
