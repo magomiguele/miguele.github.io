@@ -975,21 +975,45 @@ img, video {
 }
 
 /* =========================================================
-   REDUCCIÓN UNIFICADA DE ESPACIO ENTRE TODAS LAS SECCIONES
-   (aplica a escritorio y móvil)
+   ESPACIADO COMPACTO ELEGANTE ENTRE SECCIONES (UNIFICADO)
+   - Aplica a todas las secciones, incluyendo "Inicio" y "Contacto"
+   - Uniforme en todo el sitio
+   - Más compacto pero manteniendo respiración visual
 ========================================================= */
 
+/* Espaciado base para escritorio */
 section {
-  padding-top: 3rem;     /* menos aire arriba */
-  padding-bottom: 3rem;  /* menos aire abajo */
+  padding-top: 2.5rem !important;   /* espacio interno superior */
+  padding-bottom: 2.5rem !important; /* espacio interno inferior */
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
 
-/* Para móvil: aún más compacto */
+/* Elimina márgenes sobrantes en contenedores internos */
+.contenido-quien-soy,
+.contenido-cita-a-ciegas,
+.contenido-no-ver {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Asegura que también se aplica a Inicio y Contacto */
+#inicio,
+#contacto {
+  padding-top: 2.5rem !important;
+  padding-bottom: 2.5rem !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Versión móvil: un poco más apretada */
 @media (max-width: 768px) {
-  section {
-    padding-top: 2.2rem;
-    padding-bottom: 2.2rem;
+  section,
+  #inicio,
+  #contacto {
+    padding-top: 1.8rem !important;
+    padding-bottom: 1.8rem !important;
   }
 }
