@@ -1017,3 +1017,46 @@ section {
     padding-bottom: 1.8rem !important;
   }
 }
+
+/* =========================================================
+   ESTILO PORTFOLIO COMPACTO
+   - Espaciado uniforme entre todas las secciones
+   - Misma separación en escritorio y móvil
+   - Sin márgenes redundantes
+========================================================= */
+
+section,
+#inicio,
+#contacto {
+  padding-top: 2rem !important;     /* margen interno superior */
+  padding-bottom: 2rem !important;  /* margen interno inferior */
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Asegura que los contenedores internos no sumen espacio */
+.contenido-quien-soy,
+.contenido-cita-a-ciegas,
+.contenido-no-ver {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  gap: 2rem !important; /* separación visual equilibrada entre texto e imagen */
+}
+
+/* Móvil: un poco más compacto aún */
+@media (max-width: 768px) {
+  section,
+  #inicio,
+  #contacto {
+    padding-top: 1.3rem !important;
+    padding-bottom: 1.3rem !important;
+  }
+
+  .contenido-quien-soy,
+  .contenido-cita-a-ciegas,
+  .contenido-no-ver {
+    gap: 1.5rem !important;
+  }
+}
