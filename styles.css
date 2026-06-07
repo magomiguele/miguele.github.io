@@ -975,13 +975,18 @@ img, video {
 }
 
 .video-container {
-  width: 100%;
-  margin: 20px 0 40px 0;
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
 
 .video-wrapper {
   position: relative;
   width: 100%;
+  max-width: 1100px; /* 👈 ajusta si quieres */
+  margin: 0 auto;
   padding-bottom: 56.25%;
   height: 0;
 }
@@ -993,3 +998,4 @@ img, video {
   top: 0;
   left: 0;
 }
+   
