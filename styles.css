@@ -974,13 +974,6 @@ img, video {
   overflow-x: hidden;
 }
 
-.video-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin: 40px 0;
-}
-
 .video-wrapper {
   width: 100%;
   max-width: 1100px; /* igual que .contenido-cita-a-ciegas */
