@@ -974,14 +974,6 @@ img, video {
   overflow-x: hidden;
 }
 
-.video-container {
-  width: 100vw;
-  margin-left: 50%;
-  transform: translateX(-50%);
-  margin-top: 20px;
-  margin-bottom: 40px;
-}
-
 .video-wrapper {
   position: relative;
   width: 100%;
