@@ -990,10 +990,14 @@ img, video {
 
 #cita-a-ciegas .video-container {
   width: 100%;
-  max-width: 1100px;          /* mismo ancho que el contenido */
-  margin: 0 auto 2rem auto;   /* centrado REAL */
-  padding: 0 2rem;            /* mismos márgenes laterales */
-  box-sizing: border-box;
+  max-width: 1100px;
+  margin: 0 auto 2rem auto;
+  padding: 0; /* ✅ quitar padding */
+}
+
+   #cita-a-ciegas .video-wrapper {
+  width: 100%;
+  margin: 0 auto; /* ✅ asegura centrado */
 }
 
 #cita-a-ciegas .video-wrapper {
